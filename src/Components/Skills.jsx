@@ -9,15 +9,21 @@ export const Skills = (props) => {
 			<div className="main-body">
 				<div className="sub-heading-container">
 					<h2 className="sub-heading ">Languages &amp; Frameworks</h2>
-					{props.languages.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />))}
+					<div className="skill-item-container">
+						{props.languages.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />))}
+					</div>
 				</div>
 				<div className="sub-heading-container">
 					<h2 className="sub-heading ">Databases</h2>
-					{props.databases.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />))}
+					<div className="skill-item-container">
+						{props.databases.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />))}
+					</div>
 				</div>
 				<div className="sub-heading-container">
 					<h2 className="sub-heading ">Profiles</h2>
-					{props.profiles.map((skill) => (<SkillItemClickable key={skill._id} skill={skill} />))}
+					<div className="skill-item-container">
+						{props.profiles.map((skill) => (<SkillItemClickable key={skill._id} skill={skill} />))}
+					</div>
 				</div>
 			</div>
 		</section>
