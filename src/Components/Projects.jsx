@@ -3,10 +3,8 @@ import { ProjectItem } from './ProjectItem'
 
 export const Projects = (props) => {
 	const [categories, setCategories] = React.useState([]);
-	const [subCategories, setSubCategories] = React.useState([]);
 	const [projects, setProjects] = React.useState([]);
-	const [projectFilterCategory, setProjectFilterCategory] = React.useState("All");
-	const [projectFilterSubCategory, setProjectFilterSubCategory] = React.useState("All");
+	const [projectFilter, setProjectFilter] = React.useState("All");
 	const [limitedProjects, setLimitedProjects] = React.useState([]);
 	const [showAll, setShowAll] = React.useState(false);
 	const [maxProjectLimit, setMaxProjectLimit] = React.useState(0);
@@ -23,7 +21,7 @@ export const Projects = (props) => {
 	}, [windowWidth]);
 
 	React.useEffect(() => {
-		setCategories(Array.from(props.categories.keys()).sort());
+		setCategories(props.categories);
 	}, [props.categories]);
 
 	React.useEffect(() => {
@@ -31,39 +29,20 @@ export const Projects = (props) => {
 	}, [props.projects]);
 
 	React.useEffect(() => {
-		if (projectFilterCategory === "All") {
-			setSubCategories([]);
+		if (projectFilter === "All") {
 			setProjects(props.projects);
 		} else {
-			setSubCategories(props.categories.get(projectFilterCategory));
 			setProjects(props.projects.filter((p) => {
-				return p.projectCategory.toLowerCase() === projectFilterCategory.toLowerCase();
+				return p.projectCategory.toLowerCase() === projectFilter.toLowerCase();
 			}));
 		}
-		setProjectFilterSubCategory("All");
 		setShowAll(false);
-	}, [props.categories, props.projects, projectFilterCategory]);
-
-	React.useEffect(() => {
-		if (projectFilterSubCategory === "All") {
-			if (projectFilterCategory === "All") {
-				setProjects(props.projects);
-			} else {
-				setProjects(props.projects.filter((p) => {
-					return p.projectCategory.toLowerCase() === projectFilterCategory.toLowerCase();
-				}));
-			}
-		} else {
-			setProjects(props.projects.filter((p) => {
-				return p.projectCategory.toLowerCase() === projectFilterCategory.toLowerCase() && p.projectSubCategory.toLowerCase() === projectFilterSubCategory.toLowerCase();
-			}));
-		}
-	}, [projectFilterCategory, props.projects, projectFilterSubCategory]);
+	}, [props.projects, projectFilter]);
 
 	React.useEffect(() => {
 		setLimitedProjects(projects);
 	}, [showAll, maxProjectLimit, projects]);
-
+	
 	if (!showAll && limitedProjects.length > maxProjectLimit) setLimitedProjects(limitedProjects.slice(0, maxProjectLimit));
 
 	return (
@@ -72,15 +51,8 @@ export const Projects = (props) => {
 			<div className="main-body">
 				{categories.length > 1 ?
 					<ul className="project-filters" id="project-filters">
-						<li key="All" className={projectFilterCategory === "All" ? "active" : ""} onClick={() => setProjectFilterCategory("All")}>All</li>
-						{categories.map((catagory) => (<li key={catagory} className={projectFilterCategory === catagory ? "active" : ""} onClick={() => setProjectFilterCategory(catagory)}>{catagory}</li>))}
-					</ul>
-					: ""
-				}
-				{subCategories.length > 1 ?
-					<ul className="project-sub-filters" id="project-sub-filters">
-						<li key="All" className={projectFilterSubCategory === "All" ? "active" : ""} onClick={() => setProjectFilterSubCategory("All")}>All</li>
-						{subCategories.map((subCatagory) => (<li key={subCatagory} className={projectFilterSubCategory === subCatagory ? "active" : ""} onClick={() => setProjectFilterSubCategory(subCatagory)}>{subCatagory}</li>))}
+						<li key="All" className={projectFilter === "All" ? "active" : ""} onClick={() => setProjectFilter("All")}>All</li>
+						{categories.map((catagory) => (<li key={catagory} className={projectFilter === catagory ? "active" : ""} onClick={() => setProjectFilter(catagory)}>{catagory}</li>))}
 					</ul>
 					: ""
 				}

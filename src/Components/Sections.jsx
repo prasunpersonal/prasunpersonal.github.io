@@ -28,7 +28,7 @@ export const Sections = (props) => {
 
 	React.useEffect(() => {
 		fetch(GET_ALL_CATEGORIES).then((res) => res.json()).then((categories) => {
-			addCategories(new Map(Object.entries(categories)));
+			addCategories(categories);
 		}).catch((e) => console.log("Error: " + e));
 	}, []);
 
