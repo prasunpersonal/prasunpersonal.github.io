@@ -2,10 +2,10 @@ import React from 'react'
 
 export const ProjectItem = (props) => {
     return (
-        <div className="project-item" data-category={props.project.projectCategory}>
+        <div className="project-item">
             <div className="project-item-card">
                 <div className="project-thumbnail">
-                    <img src={props.project.projectThumblailUrl} alt={props.project.projectTitle} className="project-img" />
+                    <img draggable={false} src={props.project.projectThumblailUrl} alt={props.project.projectTitle} className="project-img" />
                     <div className="project-info">
                         <a href="/"><i className="fa-solid fa-circle-info"></i></a>
                     </div>
