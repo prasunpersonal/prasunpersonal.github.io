@@ -1,4 +1,6 @@
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Contact = (props) => {
 	const EMAIL_SENDING_URL = "https://prasun-portfolio-server.herokuapp.com/services/sendemail";
@@ -23,8 +25,15 @@ export const Contact = (props) => {
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(data)
 		}).then((res) => res.json())
-		.then((data) => console.log(data.message))
-		.catch((e) => console.log(e));
+		.then((data) => {
+			if(data.status) {
+				toast.success(data.message);
+				setData(initState);
+			} else {
+				toast.error(data.message);
+			}
+		})
+		.catch((e) => toast.error(e.message));
 	}
 
 	return (
@@ -86,6 +95,7 @@ export const Contact = (props) => {
 					</form>
 				</div>
 			</div>
+			<ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
 		</section>
 	)
 }

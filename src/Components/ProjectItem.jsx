@@ -7,12 +7,12 @@ export const ProjectItem = (props) => {
                 <div className="project-thumbnail">
                     <img draggable={false} src={props.project.projectThumblailUrl} alt={props.project.projectTitle} className="project-img" />
                     <div className="project-info">
-                        <a href="/"><i className="fa-solid fa-circle-info"></i></a>
+                        <a href={props.project.githubLink}><i className="fa-solid fa-github"></i></a>
                     </div>
                 </div>
                 <div className="project-details">
-                    <p className="project-title ">{props.project.projectTitle}</p>
-                    <p className="project-date ">{props.project.projectDate}</p>
+                    <p className="project-title single-line-text">{props.project.projectTitle}</p>
+                    <p className="project-date single-line-text">{props.project.projectDate}</p>
                 </div>
             </div>
         </div>

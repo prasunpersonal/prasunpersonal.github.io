@@ -6,7 +6,7 @@ export const SkillItemNormal = (props) => {
             <div className="skill-item-img-container">
                 <img src={props.skill.skillImageUrl} alt={props.skill.skillName} />
             </div>
-            <p className="skill-title">{props.skill.skillName}</p>
+            <p className="skill-title single-line-text">{props.skill.skillName}</p>
         </div>
     )
 }

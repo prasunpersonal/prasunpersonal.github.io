@@ -8,7 +8,7 @@ export const SkillItemClickable = (props) => {
                     <img src={props.skill.skillImageUrl} alt={props.skill.skillName} />
                 </div>
             </a>
-            <a className='skill-title-link' href={props.skill.skillLink} target="_blank" rel="noopener noreferrer"><p className="skill-title">{props.skill.skillName}</p></a>
+            <a className='skill-title-link' href={props.skill.skillLink} target="_blank" rel="noopener noreferrer"><p className="skill-title single-line-text">{props.skill.skillName}</p></a>
         </div>
     )
 }
