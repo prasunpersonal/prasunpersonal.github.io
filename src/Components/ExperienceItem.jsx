@@ -10,7 +10,7 @@ export const ExperienceItem = (props) => {
 					<p className="experience-date single-line-text"> {props.experience.startingYear} - {((props.experience.completionYear) ? props.experience.completionYear : "ongoing")} &#8226; {props.experience.organisation}</p>
 				</div>
 			</div>
-			<p className="experience-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde similique neque cumque eos atque esse, a natus quo voluptate ullam magnam illo, omnis nesciunt!</p>
+			<p className="experience-description">{props.experience.description}</p>
 		</div>
 	)
 }

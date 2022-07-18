@@ -10,7 +10,7 @@ export const EducationItem = (props) => {
 					<p className="education-date single-line-text"> {props.education.startingYear} - {((props.education.completionYear) ? props.education.completionYear : "ongoing")} &#8226; {props.education.organisation}</p>
 				</div>
 			</div>
-			<p className="education-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde similique neque cumque eos atque esse, a natus quo voluptate ullam magnam illo, omnis nesciunt!</p>
+			<p className="education-description">{props.education.description}</p>
 		</div>
 	)
 }
