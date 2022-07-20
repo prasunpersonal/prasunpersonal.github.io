@@ -508,7 +508,6 @@ header .user p {
 .project-thumbnail {
     width: 100%;
     position: relative;
-    border: 2px solid rgba(255, 255, 255, 0.25);
     overflow: hidden;
     aspect-ratio: 16/9;
     box-shadow: 0 0 5px 0px var(--color_accent);
@@ -559,11 +558,15 @@ header .user p {
     color: var(--color_accent);
 }
 
-.project-img,
+.project-vdo,
 .certificate-img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.project-vdo {
+    aspect-ratio: 16/9;
 }
 
 .project-details,

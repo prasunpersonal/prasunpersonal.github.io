@@ -5,9 +5,12 @@ export const ProjectItem = (props) => {
         <div className="project-item">
             <div className="project-item-card">
                 <div className="project-thumbnail">
-                    <img draggable={false} src={props.project.projectThumblailUrl} alt={props.project.projectTitle} className="project-img" />
+                    <video className="project-vdo" autoPlay muted loop>
+                        <source src={props.project.projectVideoUrl}></source>
+                    </video>
+                    {/* <img draggable={false} src={props.project.projectThumblailUrl} alt={props.project.projectTitle} className="project-img" /> */}
                     <div className="project-info">
-                        <a href={props.project.githubLink}><i className="fa-solid fa-github"></i></a>
+                        <a target="_blank" href={props.project.githubLink}><i className="fa-brands fa-github"></i></a>
                     </div>
                 </div>
                 <div className="project-details">
