@@ -10,7 +10,7 @@ export const ProjectItem = (props) => {
                     </video>
                     {/* <img draggable={false} src={props.project.projectThumblailUrl} alt={props.project.projectTitle} className="project-img" /> */}
                     <div className="project-info">
-                        <a target="_blank" href={props.project.githubLink}><i className="fa-brands fa-github"></i></a>
+                        <a target="_blank" rel="noopener noreferrer" href={props.project.githubLink}><i className="fa-brands fa-github"></i></a>
                     </div>
                 </div>
                 <div className="project-details">

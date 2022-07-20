@@ -38,9 +38,12 @@ export const Projects = (props) => {
 		}
 		setShowAll(false);
 	}, [props.projects, projectFilter]);
-	
-	if (!showAll && limitedProjects.length > maxProjectLimit) setLimitedProjects(projects.slice(0, maxProjectLimit));
-	else setLimitedProjects(projects);
+
+	React.useEffect(() => {
+		setLimitedProjects(projects);
+	}, [showAll, maxProjectLimit, projects]);
+
+	if (!showAll && limitedProjects.length > maxProjectLimit) setLimitedProjects(limitedProjects.slice(0, maxProjectLimit));
 
 	return (
 		<section id="projects">
