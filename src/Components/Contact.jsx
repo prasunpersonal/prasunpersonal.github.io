@@ -77,10 +77,10 @@ export const Contact = (props) => {
 							<h2>Social Profiles</h2>
 						</div>
 						<div className="contact-info">
-							<a className="btn" href="http://" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a>
-							<a className="btn" href="http://" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
-							<a className="btn" href="http://" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
-							<a className="btn" href="http://" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+							<a className="btn" href="https://www.linkedin.com/in/prasunpersonal/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a>
+							<a className="btn" href="https://www.facebook.com/prasunsarkar.personal/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
+							<a className="btn" href="https://twitter.com/prasunpersonal/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
+							<a className="btn" href="https://www.instagram.com/prasun_personal/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
 						</div>
 					</div>
 				</div>
