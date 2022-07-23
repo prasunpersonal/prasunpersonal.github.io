@@ -33,11 +33,11 @@ export const Sidebar = () => {
 				</div>
 				<nav className="top_nav">
 					<ul className="main_menu" id="main_menu">
-						<Link className="main-menu-item" activeClass="active" to="home" spy={true} smooth={true} duration={500}>Home</Link>
-						<Link className="main-menu-item" activeClass="active" to="about" spy={true} smooth={true} duration={500}>About Me</Link>
-						<Link className="main-menu-item" activeClass="active" to="projects" spy={true} smooth={true} duration={500}>Projects</Link>
-						<Link className="main-menu-item" activeClass="active" to="skills" spy={true} smooth={true} duration={500}>Skills</Link>
-						<Link className="main-menu-item" activeClass="active" to="contacts" spy={true} smooth={true} duration={500}>Contact Me</Link>
+						<Link onClick={()=> setExpand(false)} className="main-menu-item" activeClass="active" to="home" spy={true} smooth={true} duration={500}>Home</Link>
+						<Link onClick={()=> setExpand(false)} className="main-menu-item" activeClass="active" to="about" spy={true} smooth={true} duration={500}>About Me</Link>
+						<Link onClick={()=> setExpand(false)} className="main-menu-item" activeClass="active" to="projects" spy={true} smooth={true} duration={500}>Projects</Link>
+						<Link onClick={()=> setExpand(false)} className="main-menu-item" activeClass="active" to="skills" spy={true} smooth={true} duration={500}>Skills</Link>
+						<Link onClick={()=> setExpand(false)} className="main-menu-item" activeClass="active" to="contacts" spy={true} smooth={true} duration={500}>Contact Me</Link>
 					</ul>
 				</nav>
 			</header>
