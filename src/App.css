@@ -383,12 +383,14 @@ header .user p {
     flex-direction: row;
 }
 
-.partition-left, .partition-right {
+.partition-left,
+.partition-right {
     padding: 0.5rem;
     width: 50%;
 }
 
-.educations-container, .experience-container {
+.educations-container,
+.experience-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -405,7 +407,8 @@ header .user p {
     margin-bottom: 0.5rem;
 }
 
-.education-item, .experience-item {
+.education-item,
+.experience-item {
     width: 100%;
     height: auto;
     padding: 0;
@@ -414,11 +417,13 @@ header .user p {
     transition: all ease-in-out 0.3s;
 }
 
-.education-item:not(:last-child), .experience-item:not(:last-child) {
+.education-item:not(:last-child),
+.experience-item:not(:last-child) {
     padding-bottom: 1.5rem;
 }
 
-.education-item::before, .experience-item::before {
+.education-item::before,
+.experience-item::before {
     content: "";
     position: absolute;
     height: 100%;
@@ -430,13 +435,15 @@ header .user p {
     z-index: 0;
 }
 
-.education-item-top, .experience-item-top {
+.education-item-top,
+.experience-item-top {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
 }
 
-.education-item-top i, .experience-item-top i {
+.education-item-top i,
+.experience-item-top i {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -450,25 +457,29 @@ header .user p {
     z-index: 1;
 }
 
-.education-title, .experience-title {
+.education-title,
+.experience-title {
     font-weight: 500;
     font-size: 18px;
     color: var(--color_primary_text);
     line-height: 24px;
 }
 
-.education-date, .experience-date {
+.education-date,
+.experience-date {
     font-weight: 300;
     font-size: 12px;
     color: var(--color_secondary_text);
     line-height: 16px;
 }
 
-.education-item-details, .experience-item-details {
+.education-item-details,
+.experience-item-details {
     width: calc(100% - 56px);
 }
 
-.education-description, .experience-description {
+.education-description,
+.experience-description {
     color: var(--color_secondary_text);
     text-align: justify;
     margin-left: 56px;
@@ -478,6 +489,86 @@ header .user p {
 /* Project Section */
 #projects .main-body {
     align-items: center;
+}
+
+#project-filter-dropdown {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color_primary_text);
+    position: relative;
+    z-index: 25;
+    align-self: flex-start;
+    margin: 0 1rem 1rem 1rem;
+}
+
+#project-filter-selected {
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    color: var(--color_accent);
+    align-items: center;
+    min-width: 300px;
+    background-color: var(--color_on_background);
+    outline: 2px solid var(--color_accent);
+    overflow: hidden;
+}
+
+#selected-filter {
+    align-self: stretch;
+    flex: 1 1 auto;
+    line-height: 2.75rem;
+    padding: 0 0.5rem;
+}
+
+#project-filter-selected i {
+    height: 2.75rem;
+    width: 2.75rem;
+    line-height: 2.75rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#project-filter-selected .fa-filter {
+    background-color: var(--color_accent);
+    color: var(--color_primary_text);
+}
+
+#project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    min-width: 300px;
+    top: 125%;
+    border-radius: 5px;
+    background-color: var(--color_on_background);
+    overflow: hidden;
+    outline: 2px solid var(--color_accent);
+    transition: all 0.3s;
+}
+
+#project-filters.colapse {
+    display: none;
+    opacity: 1;
+}
+
+#project-filters li {
+    list-style: none;
+    color: var(--color_accent);
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    padding-left: 3.25rem;
+    line-height: 2.75rem;
+}
+
+#project-filters li:hover {
+    color: var(--color_primary_text);
+    border-color: var(--color_primary_text);
+    background: var(--color_accent);
 }
 
 .projects-container {
@@ -505,7 +596,7 @@ header .user p {
     padding: 1rem;
 }
 
-.project-thumbnail {
+.project-video-container {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -513,7 +604,7 @@ header .user p {
     box-shadow: 0 0 5px 0px var(--color_accent);
 }
 
-.project-thumbnail .project-info {
+.project-video-container .project-info {
     position: absolute;
     top: 20px;
     bottom: 20px;
@@ -527,7 +618,7 @@ header .user p {
     transition: all ease-in-out 0.3s;
 }
 
-.project-thumbnail .project-info::before {
+.project-video-container .project-info::before {
     content: "";
     position: absolute;
     width: 30%;
@@ -538,7 +629,7 @@ header .user p {
     border-top: 3px solid var(--white);
 }
 
-.project-thumbnail .project-info::after {
+.project-video-container .project-info::after {
     content: "";
     position: absolute;
     width: 30%;
@@ -549,12 +640,12 @@ header .user p {
     border-bottom: 3px solid var(--white);
 }
 
-.project-thumbnail .project-info a i {
+.project-video-container .project-info a i {
     color: var(--white);
     font-size: 2rem;
 }
 
-.project-thumbnail a i:hover {
+.project-video-container a i:hover {
     color: var(--color_accent);
 }
 
@@ -589,7 +680,13 @@ header .user p {
     color: var(--color_secondary_text);
 }
 
-.project-item-card:hover .project-thumbnail .project-info {
+.project-date i,
+.certificate-date i {
+    color: var(--color_accent);
+    margin-right: 5px;
+}
+
+.project-item-card:hover .project-video-container .project-info {
     top: 0;
     bottom: 0;
     left: 0;
@@ -600,32 +697,6 @@ header .user p {
 /* .project-item-card:hover {
     margin: 0;
 } */
-
-#project-filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#project-filters li {
-    list-style: none;
-    margin: 1rem;
-    padding: 0.5rem 1rem;
-    color: var(--color_accent);
-    border-radius: 0.3rem;
-    border: 2px solid var(--color_accent);
-    font-weight: 500;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all ease-in-out 0.3s;
-}
-
-#project-filters .active,
-#project-filters li:hover {
-    color: var(--color_primary_text);
-    border-color: var(--color_primary_text);
-    background: var(--color_accent);
-}
 
 #project-expand-btn {
     margin: 1rem;
@@ -844,7 +915,8 @@ header .user p {
         flex-direction: column;
     }
 
-    .partition-left, .partition-right {
+    .partition-left,
+    .partition-right {
         width: 100%;
     }
 }
@@ -915,6 +987,11 @@ header .user p {
 
     .sub-heading-container {
         padding: 30px 5px;
+    }
+
+    #project-filter-dropdown {
+        align-self: center;
+        margin: 0 0 1rem 0;
     }
 
     .project-item {

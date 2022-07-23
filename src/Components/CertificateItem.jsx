@@ -5,9 +5,9 @@ export const CertificateItem = (props) => {
         <div>
             <img className="certificate-img" draggable={false} src={props.certificate.certificateImageUrl} alt={props.certificate.certificateName} />
             <div className="certificate-details">
-                    <p className="certificate-title single-line-text">{props.certificate.certificateName}</p>
-                    <p className="certificate-date single-line-text">{props.certificate.certificateDate}</p>
-                </div>
+                <p className="certificate-title single-line-text">{props.certificate.certificateName}</p>
+                <p className="certificate-date single-line-text"><i class="fa-regular fa-calendar-check"></i>{props.certificate.certificateDate}</p>
+            </div>
         </div>
     )
 }

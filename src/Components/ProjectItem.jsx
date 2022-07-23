@@ -4,7 +4,7 @@ export const ProjectItem = (props) => {
     return (
         <div className="project-item">
             <div className="project-item-card">
-                <div className="project-thumbnail">
+                <div className="project-video-container">
                     <video className="project-vdo" autoPlay muted loop>
                         <source src={props.project.projectVideoUrl}></source>
                     </video>
@@ -15,7 +15,7 @@ export const ProjectItem = (props) => {
                 </div>
                 <div className="project-details">
                     <p className="project-title single-line-text">{props.project.projectTitle}</p>
-                    <p className="project-date single-line-text">{props.project.projectDate}</p>
+                    <p className="project-date single-line-text"><i className="fa-regular fa-calendar-check"></i>{props.project.projectDate}</p>
                 </div>
             </div>
         </div>
