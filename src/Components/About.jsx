@@ -17,7 +17,7 @@ export const About = (props) => {
 						<li>Language: <span>Bengali, Hindi, English</span></li>
 					</ul>
 					<div className="vartical-divider"></div>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus fugiat id sunt voluptas in ipsa, corporis laborum soluta adipisci minus! A ex iure numquam recusandae, velit enim ut quo cumque reiciendis quae maxime in nulla nemo odio! Exercitationem, omnis. Consequuntur et aut maxime ratione earum minus repudiandae, odit sint eligendi, sequi pariatur iure, ad animi quis! Hic saepe excepturi accusantium voluptates facere quae sed impedit quia voluptatibus dolore itaque minima fuga laborum fugit iusto consectetur quam magnam maiores reprehenderit minus, velit dicta tempora nihil? Quidem vero atque tempore veritatis rem commodi doloremque voluptatibus asperiores autem deleniti! Alias necessitatibus facilis distinctio?</p>
+					<p>I am Prasun Sarkar, from Nabadwip Nadia. I am a student of JIS College of Engineering, Kalyani, Nadia. I am pursuing my BTech in CSE. Coding is my passion, specifically, I love to do projects based on DSA, Android App development, Web App Development, Java, Python, JavaScript, C, C++, etc. I can also use some frameworks such as Django, React JS, Node JS, etc. Doing projects on these topics always boosts my confidence and I feel energetic. I always think about some new project ideas and try to make that into reality.</p>
 				</div>
 				<div className="partition-container">
 					<div className="partition-left">
