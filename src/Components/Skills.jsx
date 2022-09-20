@@ -32,19 +32,19 @@ export const Skills = (props) => {
 				<div className="sub-heading-container">
 					<h2 className="sub-heading ">Languages &amp; Frameworks</h2>
 					<div className="skill-item-container">
-						{props.languages.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />))}
+						{props.languages.length > 0 ? props.languages.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
 					</div>
 				</div>
 				<div className="sub-heading-container">
 					<h2 className="sub-heading ">Databases</h2>
 					<div className="skill-item-container">
-						{props.databases.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />))}
+						{props.databases.length > 0 ? props.databases.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
 					</div>
 				</div>
 				<div className="sub-heading-container">
 					<h2 className="sub-heading ">Profiles</h2>
 					<div className="skill-item-container">
-						{props.profiles.map((skill) => (<SkillItemClickable key={skill._id} skill={skill} />))}
+						{props.profiles.length > 0 ? props.profiles.map((skill) => (<SkillItemClickable key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
 					</div>
 				</div>
 				<div className="sub-heading-container">

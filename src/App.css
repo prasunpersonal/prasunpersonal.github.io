@@ -588,6 +588,10 @@ header .user p {
     align-items: center;
 }
 
+.project-item.active {
+    width: 100%;
+}
+
 .project-item-card {
     width: 100%;
     overflow: hidden;
@@ -613,7 +617,7 @@ header .user p {
     right: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: all ease-in-out 0.3s;
@@ -641,12 +645,12 @@ header .user p {
     border-bottom: 3px solid var(--white);
 }
 
-.project-video-container .project-info a i {
+.project-video-container .project-info i {
     color: var(--white);
     font-size: 2rem;
 }
 
-.project-video-container a i:hover {
+.project-video-container i:hover {
     color: var(--color_accent);
 }
 
@@ -694,10 +698,6 @@ header .user p {
     right: 0;
     opacity: 1;
 }
-
-/* .project-item-card:hover {
-    margin: 0;
-} */
 
 #project-expand-btn {
     margin: 1rem;
@@ -866,6 +866,12 @@ header .user p {
 
 #contact-form button {
     float: right;
+}
+
+.loading-message {
+    color: var(--color_secondary_text);
+    font-size: 1.5rem;
+    margin: 1rem;
 }
 
 /* Media Queries */
