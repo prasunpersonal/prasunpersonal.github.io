@@ -5,12 +5,12 @@
     "description": "This webapp is created by Prasun Sarkar to showcase his projects, certificates, skills, etc.",
     "icons": [
         {
-            "src": "./favicon.ico",
+            "src": "favicon.ico",
             "sizes": "48x48",
             "type": "image/x-icon"
         },
         {
-            "src": "./apple_touch_icon.png",
+            "src": "apple_touch_icon.png",
             "type": "image/png",
             "sizes": "180x180"
         }
