@@ -155,6 +155,8 @@ textarea:focus {
 }
 
 .btn {
+    display: flex;
+    align-items: center;
     font-size: 1.125rem;
     background-color: var(--color_on_background_variant);
     color: var(--color_accent);
@@ -170,8 +172,9 @@ textarea:focus {
     color: var(--color_primary_text);
 }
 
-.btn i {
+.btn svg {
     margin-left: 10px;
+    font-size: 1.5rem;
 }
 
 .vartical-divider {
@@ -318,7 +321,7 @@ header .user p {
     list-style: none;
 }
 
-.key-points li i {
+.key-points li svg {
     margin-right: 0.5rem;
     color: var(--color_accent);
 }
@@ -443,8 +446,8 @@ header .user p {
     margin-bottom: 0.5rem;
 }
 
-.education-item-top i,
-.experience-item-top i {
+.education-item-top svg,
+.experience-item-top svg {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -454,6 +457,7 @@ header .user p {
     align-items: center;
     justify-content: center;
     margin-right: 1rem;
+    padding: 5px;
     color: var(--white);
     z-index: 1;
 }
@@ -521,12 +525,13 @@ header .user p {
     padding: 0 0.5rem;
 }
 
-#project-filter-selected i {
+#project-filter-selected svg {
     height: 2.75rem;
     width: 2.75rem;
     line-height: 2.75rem;
     text-align: center;
     border-radius: 5px;
+    padding: 10px;
 }
 
 #project-filter-selected .fa-filter {
@@ -615,15 +620,12 @@ header .user p {
     bottom: 20px;
     left: 20px;
     right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     background-color: rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: all ease-in-out 0.3s;
 }
 
-.project-video-container .project-info::before {
+.project-video-container .info-buttons::before {
     content: "";
     position: absolute;
     width: 30%;
@@ -634,7 +636,7 @@ header .user p {
     border-top: 3px solid var(--white);
 }
 
-.project-video-container .project-info::after {
+.project-video-container .info-buttons::after {
     content: "";
     position: absolute;
     width: 30%;
@@ -645,14 +647,114 @@ header .user p {
     border-bottom: 3px solid var(--white);
 }
 
-.project-video-container .project-info i {
-    color: var(--white);
-    font-size: 2rem;
+.project-video-container .project-info .info-buttons {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.project-video-container i:hover {
+.controller {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+.main-buttons {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.controller .buttons {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.controller .buttons .left-buttons,
+.controller .buttons .right-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.controller .control-btn {
+    color: var(--white);
+    font-size: 1.25rem;
+    display: block;
+}
+
+.main-buttons .control-btn,
+.info-buttons .control-btn {
+    color: var(--white);
+    font-size: 2rem;
+    display: block;
+}
+
+svg.control-btn:hover,
+svg.active.control-btn {
     color: var(--color_accent);
 }
+
+.controller .buttons .left-buttons > *:not(:last-child) {
+    margin-right: 10PX;
+}
+
+.controller .buttons .right-buttons > *:not(:first-child) {
+    margin-left: 10PX;
+}
+
+.controller .timestamp {
+    color: var(--white);
+    cursor: default;
+    font-size: 0.75rem;
+}
+
+.controller .vdo-progress {
+    width: 100%;
+    height: 3px;
+    /* appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    opacity: 1;
+    background: var(--white);
+    border-radius: 3px; */
+}
+
+
+/* .controller .vdo-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: var(--color_accent);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.controller .vdo-progress::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: var(--color_accent);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.controller .vdo-progress::-ms-fill-lower {
+    background-color: var(--color_accent);
+}
+
+.controller .vdo-progress::-ms-fill-upper {
+    background-color: var(--white);
+} */
 
 .project-vdo,
 .certificate-img {
@@ -685,8 +787,8 @@ header .user p {
     color: var(--color_secondary_text);
 }
 
-.project-date i,
-.certificate-date i {
+.project-date svg,
+.certificate-date svg {
     color: var(--color_accent);
     margin-right: 5px;
 }
@@ -800,7 +902,8 @@ header .user p {
     font-weight: normal;
 }
 
-.contact-info-heading i {
+.contact-info-heading svg {
+    padding: 10px;
     margin-right: 1rem;
     background-color: var(--color_on_background_variant);
     width: 3rem;
@@ -837,7 +940,7 @@ header .user p {
     justify-content: center;
 }
 
-.contact-info .btn i {
+.contact-info .btn svg {
     margin: 0;
 }
 

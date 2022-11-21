@@ -1,15 +1,22 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "dp.jpg",
-      "type": "image/jpg",
-      "sizes": "1713x1713"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+    "id": "prasunpersonal.portfolio",
+    "short_name": "Prasun Sarkar",
+    "name": "Prasun Sarkar's Portfolio",
+    "description": "This webapp is created by Prasun Sarkar to showcase his projects, certificates, skills, etc.",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "apple_touch_icon.png",
+            "type": "image/png",
+            "sizes": "180x180"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
 }

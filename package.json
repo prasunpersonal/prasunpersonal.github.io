@@ -1,5 +1,5 @@
 {
-  "homepage": "https://prasunpersonal.github.io/Portfolio",
+  "homepage": "https://prasunpersonal.github.io",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -10,6 +10,7 @@
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0",
     "react-multi-carousel": "^2.8.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",

@@ -1,5 +1,8 @@
-import React from 'react'
-import { ProjectItem } from './ProjectItem'
+import React from 'react';
+import { ProjectItem } from './ProjectItem';
+import { MdFilterAlt } from 'react-icons/md';
+import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
+
 
 export const Projects = (props) => {
     const [categories, setCategories] = React.useState([]);
@@ -54,9 +57,9 @@ export const Projects = (props) => {
                 {categories.length > 1 ?
                     <div id="project-filter-dropdown">
                         <div id="project-filter-selected" onClick={() => setColapse(!colapse)}>
-                            <i className="fa-solid fa-filter"></i>
+                            <MdFilterAlt className="fa-filter" />
                             <span id="selected-filter">{projectFilter}</span>
-                            <i className={colapse ? "fa-solid fa-angle-down" : "fa-solid fa-angle-up"}></i>
+                            {colapse ? <FaAngleDown /> : <FaAngleUp />}
                         </div>
                         <ul id="project-filters" className={colapse ? "colapse" : ""}>
                             <li key="All" onClick={() => { setProjectFilter("All Projects"); setColapse(true) }}>All Projects</li>
@@ -69,7 +72,7 @@ export const Projects = (props) => {
                     {limitedProjects.length > 0 ? limitedProjects.map((project) => (<ProjectItem key={project._id} project={project} />)) : <p className="loading-message" >Please wait while the projects are loading...</p>}
                 </div>
                 {projects.length > maxProjectLimit ?
-                    <button id="project-expand-btn" className="btn" data-type="colapse" onClick={() => setShowAll(!showAll)}>{showAll ? "Show Less" : "Show More"}<i className={showAll ? "fa-solid fa-angle-up" : "fa-solid fa-angle-down"}></i></button>
+                    <button id="project-expand-btn" className="btn" data-type="colapse" onClick={() => setShowAll(!showAll)}>{showAll ? "Show Less" : "Show More"}{showAll ? <FaAngleUp /> : <FaAngleDown />}</button>
                     : ""
                 }
             </div>

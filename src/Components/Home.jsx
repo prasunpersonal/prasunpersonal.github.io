@@ -1,21 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { FaAngleDoubleRight } from 'react-icons/fa'
+import { AiFillFilePdf } from 'react-icons/ai'
 
 export const Home = (props) => {
-	return (
-		<section id="home">
-			<div className="main-body">
-				<h2>Hello there,</h2>
-				<h1>I'm <span>Prasun Sarkar</span></h1>
-				<ul className="key-points">
-					<li><i className="fa-solid fa-angles-right"></i>I am eager to learn quickly.</li>
-					<li><i className="fa-solid fa-angles-right"></i>I am determined and never give up until something is right.</li>
-					<li><i className="fa-solid fa-angles-right"></i>I enjoy hard works and facing challenges.</li>
-					<li><i className="fa-solid fa-angles-right"></i>I love turning great ideas into reality.</li>
-					<li><i className="fa-solid fa-angles-right"></i>I like to keep a positive attitude.</li>
-					<li><i className="fa-solid fa-angles-right"></i>I like working systematically.</li>
-				</ul>
-				<a href="/" id="resume-download-btn" className="btn">Download Resume<i className="fa-solid fa-file-arrow-down"></i></a>
-			</div>
-		</section>
-	)
+    return (
+        <section id="home">
+            <div className="main-body">
+                <h2>Hello there,</h2>
+                <h1>I'm <span>Prasun Sarkar</span></h1>
+                <ul className="key-points">
+                    <li><FaAngleDoubleRight />I am eager to learn quickly.</li>
+                    <li><FaAngleDoubleRight />I am determined and never give up until something is right.</li>
+                    <li><FaAngleDoubleRight />I enjoy hard works and facing challenges.</li>
+                    <li><FaAngleDoubleRight />I love turning great ideas into reality.</li>
+                    <li><FaAngleDoubleRight />I like to keep a positive attitude.</li>
+                    <li><FaAngleDoubleRight />I like working systematically.</li>
+                </ul>
+                <a href="/" id="resume-download-btn" className="btn">Download Resume <AiFillFilePdf /></a>
+            </div>
+        </section>
+    )
 }

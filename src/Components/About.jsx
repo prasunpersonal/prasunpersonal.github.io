@@ -1,6 +1,6 @@
-import React from 'react'
-import { EducationItem } from './EducationItem'
-import { ExperienceItem } from './ExperienceItem'
+import React from 'react';
+import { EducationItem } from './EducationItem';
+import { ExperienceItem } from './ExperienceItem';
 
 export const About = (props) => {
 	return (
