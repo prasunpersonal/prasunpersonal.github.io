@@ -13,6 +13,11 @@
             "src": "apple_touch_icon.png",
             "type": "image/png",
             "sizes": "180x180"
+        },
+        {
+            "src": "profile_pic.jpg",
+            "type": "image/jpg",
+            "sizes": "180x180"
         }
     ],
     "start_url": ".",

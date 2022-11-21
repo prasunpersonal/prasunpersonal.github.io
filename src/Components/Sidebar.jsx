@@ -27,10 +27,9 @@ export const Sidebar = () => {
         <div className="sidebar">
             <header className={expand ? "expand" : ""}>
                 <div className="user">
-                    <img src="./dp.jpg" alt='Profile' />
+                    <img src="/profile_pic.jpg" alt='Profile Pic' />
                     <h1>Prasun Sarkar</h1>
                     <p><span ref={el}></span></p>
-
                 </div>
                 <nav className="top_nav">
                     <ul className="main_menu" id="main_menu">

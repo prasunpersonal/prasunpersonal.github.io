@@ -16,7 +16,7 @@ export const Home = (props) => {
                     <li><FaAngleDoubleRight />I like to keep a positive attitude.</li>
                     <li><FaAngleDoubleRight />I like working systematically.</li>
                 </ul>
-                <a href="/" id="resume-download-btn" className="btn">Download Resume <AiFillFilePdf /></a>
+                <a href="/prasun_sarkar_resume.pdf" id="resume-download-btn" className="btn" download>Download Resume <AiFillFilePdf /></a>
             </div>
         </section>
     )
