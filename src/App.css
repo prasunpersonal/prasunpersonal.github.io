@@ -283,7 +283,7 @@ header .user p {
     cursor: pointer;
     display: none;
     width: 70px;
-    text-align: center;
+    min-height: 45px;
 }
 
 /* Home Section */
@@ -1067,7 +1067,9 @@ svg.active.control-btn {
     }
 
     #main-menu-bar {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #contacts .main-body {
