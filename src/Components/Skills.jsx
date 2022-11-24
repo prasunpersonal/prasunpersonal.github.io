@@ -2,73 +2,56 @@ import React from 'react';
 import { SkillItemNormal } from './SkillItemNormal';
 import { SkillItemClickable } from './SkillItemClickable';
 import { CertificateItem } from './CertificateItem';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 export const Skills = (props) => {
-	const responsive = {
-		desktop: {
-			breakpoint: { max: 3000, min: 1024 },
-			items: 3,
-			slidesToSlide: 1
-		},
-		tablet: {
-			breakpoint: { max: 1024, min: 500 },
-			items: 2,
-			slidesToSlide: 1
-		},
-		mobile: {
-			breakpoint: { max: 500, min: 0 },
-			items: 1,
-			slidesToSlide: 1
-		}
-	};
+    const [showAll, setShowAll] = React.useState(false);
+    const [maxCertificatesLimit, setMaxCertificatesLimit] = React.useState(0);
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
+    React.useEffect(() => {
+        window.onresize = () => {
+            setWindowWidth(window.innerWidth);
+        }
+    }, []);
 
-	return (
-		<section id="skills">
-			<h1 className="heading ">Skills</h1>
-			<div className="main-body">
-				<div className="sub-heading-container">
-					<h2 className="sub-heading ">Languages &amp; Frameworks</h2>
-					<div className="skill-item-container">
-						{props.languages.length > 0 ? props.languages.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
-					</div>
-				</div>
-				<div className="sub-heading-container">
-					<h2 className="sub-heading ">Databases</h2>
-					<div className="skill-item-container">
-						{props.databases.length > 0 ? props.databases.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
-					</div>
-				</div>
-				<div className="sub-heading-container">
-					<h2 className="sub-heading ">Profiles</h2>
-					<div className="skill-item-container">
-						{props.profiles.length > 0 ? props.profiles.map((skill) => (<SkillItemClickable key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
-					</div>
-				</div>
-				<div className="sub-heading-container">
-					<h2 className="sub-heading ">Certificates</h2>
-					<Carousel 
-						draggable={true}
-						swipeable={true}
-						showDots={true}
-						renderDotsOutside={true}
-						responsive={responsive}
-						ssr={true}
-						infinite={true}
-						autoPlay={true}
-						autoPlaySpeed={2000}
-						keyBoardControl={true}
-						transitionDuration={500}
-						containerClass="certificate-container"
-						dotListClass="certificate-indicater"
-						itemClass="certificate-item"
-					>
-						{props.certificates.map((certificate) => (<CertificateItem key={certificate._id} certificate={certificate} />))}
-					</Carousel>
-				</div>
-			</div>
-		</section>
-	)
+    React.useEffect(() => {
+        (windowWidth > 1024) ? setMaxCertificatesLimit(8) : (windowWidth > 425) ? setMaxCertificatesLimit(6) : setMaxCertificatesLimit(4);
+    }, [windowWidth]);
+
+    return (
+        <section id="skills">
+            <h1 className="heading ">Skills</h1>
+            <div className="main-body">
+                <div className="sub-heading-container">
+                    <h2 className="sub-heading ">Languages &amp; Frameworks</h2>
+                    <div className="skill-item-container">
+                        {props.languages.length > 0 ? props.languages.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
+                    </div>
+                </div>
+                <div className="sub-heading-container">
+                    <h2 className="sub-heading ">Databases</h2>
+                    <div className="skill-item-container">
+                        {props.databases.length > 0 ? props.databases.map((skill) => (<SkillItemNormal key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
+                    </div>
+                </div>
+                <div className="sub-heading-container">
+                    <h2 className="sub-heading ">Profiles</h2>
+                    <div className="skill-item-container">
+                        {props.profiles.length > 0 ? props.profiles.map((skill) => (<SkillItemClickable key={skill._id} skill={skill} />)) : <p className="loading-message" >Please wait while the skills are loading...</p>}
+                    </div>
+                </div>
+                <div className="sub-heading-container">
+                    <h2 className="sub-heading ">Certificates</h2>
+                    <div className="certificate-container">
+                        {props.certificates.length > 0 ? props.certificates.map((certificate, i) => (<CertificateItem key={certificate._id} certificate={certificate} hidden={i >= maxCertificatesLimit && !showAll} />)) : <p className="loading-message" >Please wait while the certificates are loading...</p>}
+                    </div>
+                    {props.certificates.length > maxCertificatesLimit ?
+                        <button id="certificate-expand-btn" className="btn" onClick={() => setShowAll(!showAll)}>{showAll ? "Show Less" : "Show More"}{showAll ? <FaAngleUp /> : <FaAngleDown />}</button>
+                        : ""
+                    }
+                </div>
+            </div>
+        </section>
+    )
 }

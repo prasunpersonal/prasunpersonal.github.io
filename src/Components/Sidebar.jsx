@@ -15,7 +15,6 @@ export const Sidebar = () => {
             loop: true,
             cursorChar: '_'
         });
-
         typed.start();
         return () => {
             typed.destroy();

@@ -5,17 +5,17 @@ import { FaCalendarCheck } from 'react-icons/fa';
 
 export const ProjectItem = (props) => {
     const vdoRef = React.useRef(null);
-    const [isFullscreen, setFullScreen] = React.useState(false);
-    const [isPlaying, setPlaying] = React.useState(true);
+    const [isPlaying, setPlaying] = React.useState(false);
     const [isMuted, setMuted] = React.useState(true);
     const [progress, setProgress] = React.useState(0);
     const [speed, setSpeed] = React.useState(1);
 
     React.useEffect(() => {
-        setMuted(!isFullscreen);
-        setPlaying(true);
+        setMuted(!props.active);
+        setProgress(0);
+        setPlaying(props.active);
         setSpeed(1);
-    }, [isFullscreen]);
+    }, [props.active]);
 
     React.useEffect(() => {
         if (isPlaying) vdoRef.current.play();
@@ -37,14 +37,14 @@ export const ProjectItem = (props) => {
     }
 
     return (
-        <div className={isFullscreen ? "project-item active" : "project-item"}>
+        <div className={"project-item " + (props.active ? "active " : "") + (props.hidden ? "hidden " : "")}>
             <div className="project-item-card">
                 <div className="project-video-container">
                     <video className="project-vdo" loop muted={isMuted} controls={false} ref={vdoRef} onTimeUpdate={() => setProgress(parseInt(vdoRef.current.currentTime))}>
                         <source src={props.project.projectVideoUrl}></source>
                     </video>
                     <div className="project-info">
-                        {isFullscreen ?
+                        {props.active ?
                             <div className="controller">
                                 <div className="main-buttons">
                                     <MdReplay10 className="control-btn" onClick={() => vdoRef.current.currentTime -= 10} />
@@ -53,7 +53,7 @@ export const ProjectItem = (props) => {
                                 </div>
                                 <div className="buttons">
                                     <div className="left-buttons">
-                                        <div className="timestamp control-btn">
+                                        <div className="timestamp">
                                             <span id="played" >{secondsToTime(vdoRef.current.currentTime)}</span> / <span id="duration">{secondsToTime(vdoRef.current.duration)}</span>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@ export const ProjectItem = (props) => {
                                         <a target="_blank" rel="noopener noreferrer" href={props.project.githubLink}><AiFillGithub className="control-btn" /></a>
                                         <MdSpeed className={(speed === 1) ? "control-btn" : "control-btn active"} onClick={()=> setSpeed(((speed+2)%2)+1) } />
                                         {isMuted ? <MdVolumeOff className="control-btn" onClick={() => setMuted(!isMuted)} /> : <MdVolumeUp className="control-btn" onClick={() => setMuted(!isMuted)} />}
-                                        <MdFullscreenExit className="control-btn" onClick={() => setFullScreen(!isFullscreen)} />
+                                        <MdFullscreenExit className="control-btn" onClick={() => props.setActiveProjectId("")} />
                                     </div>
                                 </div>
                                 <input type="range" className="vdo-progress" min="0" max={parseInt(vdoRef.current.duration)} value={progress} onChange={(e) => vdoRef.current.currentTime = e.target.value} />
@@ -70,7 +70,7 @@ export const ProjectItem = (props) => {
                             :
                             <div className="info-buttons">
                                 <a target="_blank" rel="noopener noreferrer" href={props.project.linkedinLink}><AiFillLinkedin className="control-btn" /></a>
-                                <MdFullscreen className="control-btn" onClick={() => setFullScreen(!isFullscreen)} />
+                                <MdFullscreen className="control-btn" onClick={() => props.setActiveProjectId(props.project._id)} />
                                 <a target="_blank" rel="noopener noreferrer" href={props.project.githubLink}><AiFillGithub className="control-btn" /></a>
                             </div>
                         }

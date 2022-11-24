@@ -16,7 +16,7 @@
 }
 
 *::-webkit-scrollbar {
-    width: 0.5rem;
+    width: 0.4vw;
 }
 
 *::-webkit-scrollbar-track {
@@ -30,14 +30,14 @@
 
 body {
     position: relative;
-    padding-left: 25rem;
+    padding-left: 27.5vw;
     min-width: 320px;
     transition: all ease-in-out 0.3s;
 }
 
 section {
     min-height: 100vh;
-    padding: 1.5rem 3rem;
+    padding: 1.5vw 3vw;
 }
 
 section:nth-child(even) {
@@ -47,7 +47,6 @@ section:nth-child(even) {
     --color_primary_text: #000000;
     --color_secondary_text: #3A3A3A;
     --color_accent: #008B8B;
-
     background-color: var(--color_background);
 }
 
@@ -58,7 +57,6 @@ section:nth-child(odd) {
     --color_primary_text: #FFFFFF;
     --color_secondary_text: #C5C5C5;
     --color_accent: #FFA500;
-
     background-color: var(--color_background);
 }
 
@@ -106,17 +104,17 @@ textarea:focus {
     width: 100%;
     text-align: center;
     font-weight: 500;
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 2.5vw;
+    margin-bottom: 3vw;
     color: var(--color_primary_text);
 }
 
 .heading::after {
     content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: -0.3vw;
     left: 0;
-    height: 1px;
+    height: 0.05vw;
     width: 100%;
     background-color: var(--color_accent);
 }
@@ -124,26 +122,26 @@ textarea:focus {
 .sub-heading {
     position: relative;
     font-weight: 500;
-    font-size: 24px;
-    padding: 0 1rem;
+    font-size: 1.5vw;
+    padding: 0 1.5vw;
     color: var(--color_primary_text);
 }
 
 .sub-heading-container {
     position: relative;
     width: 100%;
-    padding: 1.5rem 0.5rem;
-    border: 2px solid var(--color_primary_text);
+    padding: 2vw 1vw;
+    border: 0.2vw solid var(--color_primary_text);
 }
 
 .sub-heading-container:not(:last-child) {
-    margin-bottom: 50px;
+    margin-bottom: 4vw;
 }
 
 .sub-heading-container .sub-heading {
     position: absolute;
     top: 0;
-    left: 1rem;
+    left: 1vw;
     background-color: var(--color_background);
     transform: translate(0, -50%);
 }
@@ -157,12 +155,13 @@ textarea:focus {
 .btn {
     display: flex;
     align-items: center;
-    font-size: 1.125rem;
+    font-size: 1.5vw;
+    font-weight: 500;
     background-color: var(--color_on_background_variant);
     color: var(--color_accent);
-    border: 2px solid var(--color_accent);
-    border-radius: 3rem;
-    padding: 0.625rem 2rem;
+    border: 0.2vw solid var(--color_accent);
+    border-radius: 3vw;
+    padding: 0.5vw 2vw;
     cursor: pointer;
     transition: all ease-in-out 0.3s;
 }
@@ -173,8 +172,8 @@ textarea:focus {
 }
 
 .btn svg {
-    margin-left: 10px;
-    font-size: 1.5rem;
+    margin-left: 0.75vw;
+    font-size: 1.5vw;
 }
 
 .vartical-divider {
@@ -200,67 +199,70 @@ header {
     position: fixed;
     left: 0;
     top: 0;
-    height: 100%;
-    width: 25rem;
+    height: 100vh;
+    width: 27.5vw;
     background-color: var(--color_primary_dark);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all ease-in-out 0.3s;
-    box-shadow: 0px 0px 5px 0px var(--black);
+    box-shadow: 0 0 0.5vw 0 var(--black);
     z-index: 500;
+    overflow-y: scroll;
+    padding: 3vh 0;
 }
 
 header .user {
-    margin-bottom: 35px;
+    margin-bottom: 3vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 header .user img {
-    height: 12rem;
-    width: 12rem;
+    overflow: hidden;
+    height: 14vw;
+    width: 14vw;
     border-radius: 50%;
-    border: 5px solid var(--color_primary_accent);
+    border: 0.35vw solid var(--color_primary_accent);
+    margin-bottom: 1vw;
 }
 
 header .user h1 {
-    font-size: 36px;
-    letter-spacing: 0.05em;
+    font-size: 2.5vw;
+    letter-spacing: 0.1vw;
     color: var(--white);
 }
 
 header .user p {
     text-align: center;
     color: var(--color_primary_accent);
-    font-size: 18px;
+    font-size: 1.125vw;
     font-weight: bold;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1vw;
 }
 
 #main_menu {
     display: flex;
     list-style: none;
-    font-size: 1rem;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    font-weight: 500;
+    letter-spacing: 0.1vw;
     flex-direction: column;
     align-items: center;
 }
 
 #main_menu .main-menu-item {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
     color: #C5C5C5;
     cursor: pointer;
-    letter-spacing: 0.05em;
-    width: 15rem;
+    width: 18vw;
     text-align: center;
     background: var(--color_primary_background);
-    margin: 5px 0;
-    padding: 6px 10px;
-    border-radius: 36px;
+    margin: 0.5vw 0;
+    padding: 0.25vw 1vw;
+    border-radius: 2vw;
     transition: all ease-in-out 0.3s;
 }
 
@@ -272,32 +274,33 @@ header .user p {
 
 #main-menu-bar {
     position: fixed;
-    right: 10px;
-    top: 10px;
-    font-size: 1.5rem;
+    right: 2vw;
+    top: 2vw;
     color: var(--white);
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 5px;
-    border-radius: 8px;
+    padding: 1vw 3vw;
+    border-radius: 0.75vw;
     z-index: 505;
     cursor: pointer;
     display: none;
-    width: 70px;
-    min-height: 45px;
+}
+
+#main-menu-bar svg {
+    min-height: 3vw;
+    min-width: 3vw;
 }
 
 /* Home Section */
 #home .main-body {
-    min-height: calc(100vh - 3rem);
+    min-height: calc(100vh - 3vw);
     justify-content: center;
     align-items: flex-start;
 }
 
 #home .main-body h1 {
     font-weight: bold;
-    font-size: 60px;
-    line-height: 60px;
-    letter-spacing: -0.01em;
+    font-size: 5vw;
+    line-height: 5vw;
     color: var(--color_primary_text);
 }
 
@@ -307,22 +310,21 @@ header .user p {
 
 #home .main-body h2 {
     font-weight: 500;
-    font-size: 30px;
-    line-height: 32px;
-    letter-spacing: -0.01em;
+    font-size: 2.75vw;
+    line-height: 2.75vw;
     color: var(--color_primary_text);
-    margin-bottom: 20px;
+    margin-bottom: 1vw;
 }
 
 .key-points {
     color: var(--color_secondary_text);
-    font-size: 1rem;
-    margin: 2rem 0;
+    font-size: 1.125vw;
+    margin: 3vw 0;
     list-style: none;
 }
 
 .key-points li svg {
-    margin-right: 0.5rem;
+    margin-right: 0.5vw;
     color: var(--color_accent);
 }
 
@@ -330,85 +332,70 @@ header .user p {
 .description {
     display: flex;
     align-items: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.3vw;
+    font-size: 1.125vw;
 }
 
 .my-info {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-right: 2.5rem;
+    padding-right: 3vw;
 }
 
 .my-info li {
     white-space: nowrap;
-    line-height: 2.25rem;
+    line-height: 2.5vw;
     position: relative;
     list-style: none;
     font-weight: bold;
     color: var(--color_primary_text);
 }
 
-.my-info li:not(:last-child)::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 0.5px;
-    background-color: var(--color_accent);
-    bottom: 0;
-    left: 0;
-    transform: translateY(50%);
-    opacity: 0.5;
-    display: none;
-}
-
 .my-info li span {
-    margin-left: 0.625rem;
+    margin-left: 0.625vw;
     font-weight: normal;
     color: var(--color_accent);
 }
 
 .description p {
     position: relative;
-    padding-left: 2.5rem;
+    padding-left: 3vw;
     color: var(--color_secondary_text);
-    font-size: 1rem;
-    line-height: 1.75rem;
+    line-height: 1.85vw;
     text-align: justify;
 }
 
 .description p::first-letter {
     color: var(--color_accent);
-    font-size: 2rem;
+    font-size: 2.5vw;
 }
 
 .partition-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
-.partition-left,
-.partition-right {
-    padding: 0.5rem;
-    width: 50%;
+.partition-left, .partition-right {
+    width: 49%;
 }
 
-.educations-container,
-.experience-container {
+.educations-container, .experience-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 1.25vw;
     background-color: var(--color_on_background);
-    border-radius: 5px;
-    box-shadow: 0 0 5px 0 var(--color_accent);
+    border-radius: 0.5vw;
+    box-shadow: 0 0 0.325vw 0 var(--color_accent);
 }
 
 #about .sub-heading {
     padding: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1vw;
 }
 
 .education-item,
@@ -423,19 +410,18 @@ header .user p {
 
 .education-item:not(:last-child),
 .experience-item:not(:last-child) {
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.75vw;
 }
 
-.education-item::before,
-.experience-item::before {
+.education-item::before, .experience-item::before {
     content: "";
     position: absolute;
     height: 100%;
-    width: 2px;
+    width: 0.2vw;
     background-color: var(--color_accent);
-    top: 0;
-    left: 0;
-    transform: translateX(20px);
+    top: 1.375vw;
+    left: 1.375vw;
+    transform: translateX(-50%);
     z-index: 0;
 }
 
@@ -443,95 +429,85 @@ header .user p {
 .experience-item-top {
     display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75vw;
 }
 
-.education-item-top svg,
-.experience-item-top svg {
-    height: 40px;
-    width: 40px;
+.education-item-top svg, .experience-item-top svg {
+    height: 2.75vw;
+    width: 2.75vw;
     border-radius: 50%;
     background-color: var(--color_accent);
-    font-size: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1rem;
-    padding: 5px;
+    margin-right: 1.125vw;
+    padding: 0.35vw;
     color: var(--white);
     z-index: 1;
 }
 
-.education-title,
-.experience-title {
+.education-title, .experience-title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.125vw;
     color: var(--color_primary_text);
-    line-height: 24px;
+    line-height: 1.75vw;
 }
 
-.education-date,
-.experience-date {
+.education-date, .experience-date {
     font-weight: 300;
-    font-size: 12px;
+    font-size: 0.85vw;
     color: var(--color_secondary_text);
-    line-height: 16px;
+    line-height: 1vw;
 }
 
 .education-item-details,
 .experience-item-details {
-    width: calc(100% - 56px);
+    width: calc(100% - 4vw);
 }
 
-.education-description,
-.experience-description {
+.education-description, .experience-description {
     color: var(--color_secondary_text);
     text-align: justify;
-    margin-left: 56px;
-    font-size: 0.875rem;
+    margin-left: 4vw;
+    font-size: 1vw;
 }
 
 /* Project Section */
-#projects .main-body {
-    align-items: center;
-}
-
 #project-filter-dropdown {
-    font-size: 18px;
+    font-size: 1.5vw;
     font-weight: 500;
     color: var(--color_primary_text);
     position: relative;
     z-index: 25;
     align-self: flex-start;
-    margin: 0 1rem 1rem 1rem;
+    margin-bottom: 1.5vw;
 }
 
 #project-filter-selected {
-    border-radius: 5px;
+    border-radius: 0.5vw;
     cursor: pointer;
     display: flex;
     color: var(--color_accent);
     align-items: center;
-    min-width: 300px;
+    min-width: 25vw;
     background-color: var(--color_on_background);
-    outline: 2px solid var(--color_accent);
+    outline: 0.2vw solid var(--color_accent);
     overflow: hidden;
 }
 
 #selected-filter {
     align-self: stretch;
     flex: 1 1 auto;
-    line-height: 2.75rem;
-    padding: 0 0.5rem;
+    line-height: 3.2vw;
+    padding: 0 1vw;
 }
 
 #project-filter-selected svg {
-    height: 2.75rem;
-    width: 2.75rem;
-    line-height: 2.75rem;
+    height: 3.2vw;
+    width: 3.2vw;
     text-align: center;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 0.5vw;
+    padding: 0.5vw;
 }
 
 #project-filter-selected .fa-filter {
@@ -546,12 +522,12 @@ header .user p {
     flex-direction: column;
     align-items: stretch;
     position: absolute;
-    min-width: 300px;
+    width: 100%;
     top: 125%;
-    border-radius: 5px;
+    border-radius: 0.5vw;
     background-color: var(--color_on_background);
     overflow: hidden;
-    outline: 2px solid var(--color_accent);
+    outline: 0.2vw solid var(--color_accent);
     transition: all 0.3s;
 }
 
@@ -564,11 +540,10 @@ header .user p {
     list-style: none;
     color: var(--color_accent);
     font-weight: 500;
-    font-size: 18px;
     cursor: pointer;
     transition: all ease-in-out 0.3s;
-    padding-left: 3.25rem;
-    line-height: 2.75rem;
+    padding-left: 4.2vw;
+    line-height: 3.2vw;
 }
 
 #project-filters li:hover {
@@ -583,6 +558,7 @@ header .user p {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
+    margin-bottom: 1vw;
 }
 
 .project-item {
@@ -591,6 +567,10 @@ header .user p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.project-item.hidden, .certificate-item.hidden {
+    display: none;
 }
 
 .project-item.active {
@@ -603,7 +583,7 @@ header .user p {
     cursor: pointer;
     position: relative;
     transition: all ease-in-out 0.3s;
-    padding: 1rem;
+    padding: 1vw;
 }
 
 .project-video-container {
@@ -611,15 +591,15 @@ header .user p {
     position: relative;
     overflow: hidden;
     aspect-ratio: 16/9;
-    box-shadow: 0 0 5px 0px var(--color_accent);
+    box-shadow: 0 0 0.5vw 0p var(--color_accent);
 }
 
 .project-video-container .project-info {
     position: absolute;
-    top: 20px;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    top: 0.5vw;
+    bottom: 0.5vw;
+    left: 0.5vw;
+    right: 0.5vw;
     background-color: rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: all ease-in-out 0.3s;
@@ -630,10 +610,10 @@ header .user p {
     position: absolute;
     width: 30%;
     height: 30%;
-    top: 15px;
-    left: 15px;
-    border-left: 3px solid var(--white);
-    border-top: 3px solid var(--white);
+    top: 1vw;
+    left: 1vw;
+    border-left: 0.2vw solid var(--white);
+    border-top: 0.2vw solid var(--white);
 }
 
 .project-video-container .info-buttons::after {
@@ -641,10 +621,10 @@ header .user p {
     position: absolute;
     width: 30%;
     height: 30%;
-    bottom: 15px;
-    right: 15px;
-    border-right: 3px solid var(--white);
-    border-bottom: 3px solid var(--white);
+    bottom: 1vw;
+    right: 1vw;
+    border-right: 0.2vw solid var(--white);
+    border-bottom: 0.2vw solid var(--white);
 }
 
 .project-video-container .project-info .info-buttons {
@@ -660,7 +640,7 @@ header .user p {
     flex-direction: column;
     height: 100%;
     width: 100%;
-    padding: 15px;
+    padding: 1.5vw;
 }
 
 .main-buttons {
@@ -671,7 +651,7 @@ header .user p {
 }
 
 .controller .buttons {
-    margin-bottom: 8px;
+    margin-bottom: 0.5vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -684,17 +664,30 @@ header .user p {
     align-items: center;
 }
 
-.controller .control-btn {
-    color: var(--white);
-    font-size: 1.25rem;
+.controller .buttons .control-btn {
+    font-size: 1.5vw;
     display: block;
 }
 
-.main-buttons .control-btn,
-.info-buttons .control-btn {
+.controller .buttons .timestamp {
     color: var(--white);
-    font-size: 2rem;
+    font-size: 1vw;
     display: block;
+    cursor: default;
+}
+
+.main-buttons .control-btn {
+    font-size: 3.5vw;
+    display: block;
+}
+
+.info-buttons .control-btn {
+    font-size: 2vw;
+    display: block;
+}
+
+svg.control-btn {
+    color: var(--white);
 }
 
 svg.control-btn:hover,
@@ -703,58 +696,18 @@ svg.active.control-btn {
 }
 
 .controller .buttons .left-buttons > *:not(:last-child) {
-    margin-right: 10PX;
+    margin-right: 1vw;
 }
 
 .controller .buttons .right-buttons > *:not(:first-child) {
-    margin-left: 10PX;
-}
-
-.controller .timestamp {
-    color: var(--white);
-    cursor: default;
-    font-size: 0.75rem;
+    margin-left: 1vw;
 }
 
 .controller .vdo-progress {
     width: 100%;
-    height: 3px;
-    /* appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    opacity: 1;
-    background: var(--white);
-    border-radius: 3px; */
+    height: 0.2vw;
+    border-radius: 0.2vw;
 }
-
-
-/* .controller .vdo-progress::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  background: var(--color_accent);
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.controller .vdo-progress::-moz-range-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  background: var(--color_accent);
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.controller .vdo-progress::-ms-fill-lower {
-    background-color: var(--color_accent);
-}
-
-.controller .vdo-progress::-ms-fill-upper {
-    background-color: var(--white);
-} */
 
 .project-vdo,
 .certificate-img {
@@ -769,28 +722,30 @@ svg.active.control-btn {
 
 .project-details,
 .certificate-details {
-    padding-top: 10px;
+    padding-top: 0.5vw;
 }
 
 .project-title,
 .certificate-title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.125vw;
     color: var(--color_primary_text);
-    margin-bottom: 4px;
+    margin-bottom: 0.3vw;
 }
 
 .project-date,
 .certificate-date {
     font-weight: 300;
-    font-size: 12px;
+    font-size: 0.85vw;
+    display: flex;
+    align-items: center;
     color: var(--color_secondary_text);
 }
 
 .project-date svg,
 .certificate-date svg {
     color: var(--color_accent);
-    margin-right: 5px;
+    margin-right: 0.4vw;
 }
 
 .project-item-card:hover .project-video-container .project-info {
@@ -802,7 +757,7 @@ svg.active.control-btn {
 }
 
 #project-expand-btn {
-    margin: 1rem;
+    align-self: center;
 }
 
 /* Skill Section */
@@ -813,21 +768,26 @@ svg.active.control-btn {
 }
 
 .skill-item {
-    margin: 10px 0;
-    width: 100px;
+    margin: 0.75vw 0;
+    width: calc(100% / 8);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.skill-item .skill-image-link {
+    display: contents;
+}
+
+
 .skill-item .skill-item-img-container {
-    height: 70px;
-    width: 70px;
+    width: 65%;
+    aspect-ratio: 1;
     border-radius: 50%;
-    box-shadow: 0 0 5px 0px var(--color_accent);
+    box-shadow: 0 0 0.5vw 0 var(--color_accent);
     overflow: hidden;
-    padding: 0.85rem;
-    margin-bottom: 0.3rem;
+    padding: 1vw;
+    margin-bottom: 0.25vw;
 }
 
 .skill-item .skill-item-img-container img {
@@ -840,33 +800,31 @@ svg.active.control-btn {
 }
 
 .skill-item .skill-title {
-    padding: 0 5% 0 5%;
+    font-size: 1vw;
+    padding: 0 2.5% 0 2.5%;
     text-align: center;
     color: var(--color_secondary_text);
     width: 100%;
 }
 
+.certificate-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 1vw;
+}
+
 .certificate-item {
-    padding: 0.5rem;
+    padding: 0.5vw;
+    width: calc(100% / 4);
 }
 
 .certificate-img {
     aspect-ratio: 4/3;
 }
 
-.certificate-indicater {
-    position: initial !important;
-}
-
-.react-multi-carousel-dot button {
-    margin: 0 3px !important;
-    border-color: var(--color_secondary_text) !important;
-}
-
-.react-multi-carousel-dot--active button,
-.react-multi-carousel-dot button:hover {
-    background: var(--color_accent) !important;
-    border-color: var(--color_accent) !important;
+#certificate-expand-btn {
+    margin: 0 auto;
 }
 
 /* Contact Section */
@@ -884,39 +842,38 @@ svg.active.control-btn {
     width: 100%;
     padding: 1.5rem;
     background-color: var(--color_on_background);
-    border-radius: 0.5rem;
+    border-radius: 0.5vw;
 }
 
 .contact-info-box:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25vw;
 }
 
 .contact-info-heading {
     display: flex;
     align-items: center;
     color: var(--color_primary_text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75vw;
 }
 
 .contact-info-heading h2 {
-    font-weight: normal;
+    font-size: 1.5vw;
+    font-weight: 500;
 }
 
 .contact-info-heading svg {
-    padding: 10px;
-    margin-right: 1rem;
+    padding: 0.5vw;
+    margin-right: 1.125vw;
     background-color: var(--color_on_background_variant);
-    width: 3rem;
-    height: 3rem;
+    width: 3vw;
+    height: 3vw;
     border-radius: 50%;
-    line-height: 3rem;
     text-align: center;
-    font-size: 1.25rem;
 }
 
 .contact-info {
     color: var(--color_secondary_text);
-    padding-left: 4rem;
+    padding-left: 4.125vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -925,15 +882,16 @@ svg.active.control-btn {
 
 .contact-info p {
     overflow-wrap: break-word;
-    max-width: calc(100% - 2.5rem);
-    padding-right: 1rem;
+    max-width: calc(100% - 3vw);
+    padding-right: 1vw;
+    font-size: 1vw;
+    font-weight: 300;
 }
 
 .contact-info .btn {
     box-sizing: initial;
-    height: 2.5rem;
-    width: 2.5rem;
-    font-size: 1.25rem;
+    height: 2.5vw;
+    width: 2.5vw;
     padding: 0;
     display: flex;
     align-items: center;
@@ -947,16 +905,16 @@ svg.active.control-btn {
 #contact-right h2 {
     color: var(--color_accent);
     font-weight: normal;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
 }
 
 #contact-form .input-box {
     width: 100% !important;
-    padding: 0.625rem 1.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.125rem;
-    border-radius: 0.5rem;
+    padding: 0.75vw 1.5vw;
+    margin-bottom: 1.25vw;
+    font-size: 1.125vw;
+    border-radius: 0.5vw;
     border: none;
     background-color: var(--color_on_background);
     color: var(--color_primary_text);
@@ -964,7 +922,7 @@ svg.active.control-btn {
 
 #contact-form #message {
     resize: none;
-    height: 12rem !important;
+    height: 15vw !important;
 }
 
 #contact-form button {
@@ -973,48 +931,130 @@ svg.active.control-btn {
 
 .loading-message {
     color: var(--color_secondary_text);
-    font-size: 1.5rem;
-    margin: 1rem;
+    font-size: 1.125vw;
+    margin: 1vw;
 }
 
 /* Media Queries */
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1024px) {
     body {
-        padding-left: 20rem;
+        padding-left: 0;
+    }
+
+    section {
+        padding: 2vw;
+    }
+
+    .btn {
+        font-size: 3vw;
+        border: 0.3vw solid var(--color_accent);
+        padding: 0.75vw 3vw;
+        border-radius: 5vw;
+    }
+
+    .btn svg {
+        margin-left: 1vw;
+        font-size: 3vw;
+    }
+
+    .heading {
+        font-size: 5vw;
+        margin-bottom: 4vw;
+    }
+
+    .heading::after {
+        height: 0.15vw;
+    }
+
+    .sub-heading {
+        font-size: 3vw;
+    }
+
+    .sub-heading-container {
+        padding: 2.5vw 1.5vw;
     }
 
     header {
-        width: 20rem;
+        width: 50vw;
+        left: -50vw;
     }
 
     header .user img {
-        height: 10rem;
-        width: 10rem;
+        height: 25vw;
+        width: 25vw;
     }
 
     header .user h1 {
-        font-size: 30px;
+        font-size: 5vw;
     }
 
     header .user p {
-        font-size: 16px;
+        font-size: 2.5vw;
     }
 
-    .project-item {
-        width: calc(100%/2);
+    header.expand {
+        left: 0;
+    }
+
+    #main_menu {
+        font-size: 2.5vw;
+        line-height: 3.75vw;
+    }
+
+    #main_menu .main-menu-item {
+        width: 30vw;
+        margin: 0.75vw;
+        border-radius: 5vw;
+    }
+
+    #main-menu-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #home .main-body h2 {
+        font-size: 4vw;
+        line-height: 5vw;
+    }
+
+    #home .main-body h1 {
+        font-size: 8vw;
+        line-height: 9vw;
+    }
+
+    .key-points {
+        font-size: 2.25vw;
+        margin: 5vw 0;
+    }
+
+    .key-points li svg {
+        margin-right: 1vw;
     }
 
     .description {
         align-items: flex-start;
         flex-direction: column;
+        font-size: 2vw;
+        margin-bottom: 3.5vw;
     }
 
     .my-info {
         padding-right: 0;
+        margin-bottom: 2vw;
+    }
+
+    .my-info li {
+        line-height: 4.25vw;
     }
 
     .description p {
         padding-left: 0;
+        line-height: 3.5vw;
+    }
+
+    .description p::first-letter {
+        font-size: 4.5vw;
     }
 
     .description .vartical-divider {
@@ -1025,51 +1065,182 @@ svg.active.control-btn {
         flex-direction: column;
     }
 
+    #about .sub-heading {
+        margin-bottom: 1.5vw;
+    }
+
     .partition-left,
     .partition-right {
         width: 100%;
     }
-}
 
-@media screen and (max-width: 1024px) {
-    body {
-        padding-left: 0;
+    .partition-left {
+        margin-bottom: 3vw;
     }
 
-    section {
-        padding: 1.5rem;
+    .educations-container, .experience-container {
+        padding: 1.75vw;
     }
 
-    .sub-heading-container {
-        padding: 40px 20px;
+    .education-item:not(:last-child), .experience-item:not(:last-child) {
+        padding-bottom: 2vw;
     }
 
-    header {
-        width: 25rem;
-        left: -25rem;
+    .education-item::before, .experience-item::before {
+        left: 2.5vw;
+        width: 0.3vw;
     }
 
-    header .user img {
-        height: 12rem;
-        width: 12rem;
+    .education-item-top, .experience-item-top {
+        margin-bottom: 1vw;
     }
 
-    header .user h1 {
-        font-size: 36px;
+    .education-item-top svg, .experience-item-top svg {
+        height: 5vw;
+        width: 5vw;
+        margin-right: 2vw;
+        padding: 0.75vw;
     }
 
-    header .user p {
-        font-size: 18px;
+    .education-item-details, .experience-item-details {
+        width: calc(100% - 7vw);
     }
 
-    header.expand {
-        left: 0;
+    .education-title, .experience-title {
+        font-size: 2.25vw;
+        line-height: 3vw;
     }
 
-    #main-menu-bar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .education-date, .experience-date {
+        font-size: 1.5vw;
+        line-height: 2vw;
+    }
+
+    .education-description, .experience-description {
+        margin-left: 7vw;
+        font-size: 2vw;
+    }
+
+    #project-filter-dropdown {
+        font-size: 2.5vw;
+    }
+
+    #project-filter-selected {
+        min-width: 35vw;
+        border-radius: 0.75vw;
+        outline: 0.3vw solid var(--color_accent);
+    }
+
+    #project-filter-selected svg {
+        height: 5vw;
+        width: 5vw;
+        border-radius: 0.75vw;
+        padding: 1vw;
+    }
+
+    #selected-filter {
+        line-height: 5vw;
+        padding: 0 1.5vw;
+    }
+
+    #project-filters {
+        border-radius: 0.75vw;
+        outline: 0.3vw solid var(--color_accent);
+    }
+
+    #project-filters li {
+        line-height: 5vw;
+        padding-left: 6.5vw;
+    }
+
+    .projects-container {
+        margin-bottom: 2vw;
+    }
+
+    .project-item {
+        width: calc(100%/2);
+    }
+
+    .project-title, .certificate-title {
+        font-size: 2.25vw;
+    }
+
+    .project-date, .certificate-date {
+        font-size: 1.5vw;
+    }
+
+    .project-video-container .project-info {
+        top: 1vw;
+        bottom: 1vw;
+        left: 1vw;
+        right: 1vw;
+    }
+
+    .project-video-container .info-buttons::before {
+        top: 2vw;
+        left: 2vw;
+        border-left: 0.3vw solid var(--white);
+        border-top: 0.3vw solid var(--white);
+    }
+
+    .project-video-container .info-buttons::after {
+        bottom: 2vw;
+        right: 2vw;
+        border-right: 0.3vw solid var(--white);
+        border-bottom: 0.3vw solid var(--white);
+    }
+
+    .controller {
+        padding: 2.5vw;
+    }
+
+    .info-buttons .control-btn {
+        font-size: 5vw;
+    }
+
+    .main-buttons .control-btn {
+        font-size: 7.5vw;
+    }
+
+    .controller .buttons {
+        margin-bottom: 2vw;
+    }
+
+    .controller .buttons .timestamp {
+        font-size: 1.5vw;
+    }
+
+    .controller .buttons .control-btn {
+        font-size: 2.5vw;
+    }
+
+    .controller .buttons .right-buttons > *:not(:first-child) {
+        margin-left: 2vw;
+    }
+
+    .controller .buttons .left-buttons > *:not(:last-child) {
+        margin-right: 2vw;
+    }
+
+    .controller .vdo-progress {
+        height: 0.5vw;
+        border-radius: 0.5vw;
+    }
+
+    .skill-item {
+        width: calc(100%/7);
+    }
+
+    .skill-item .skill-item-img-container {
+        padding: 1.5vw;
+    }
+
+    .skill-item .skill-title {
+        font-size: 2vw;
+    }
+
+    .certificate-item {
+        width: calc(100%/3);
     }
 
     #contacts .main-body {
@@ -1082,31 +1253,401 @@ svg.active.control-btn {
         width: 100%;
     }
 
-    .contact-info-box:last-child {
-        margin-bottom: 1rem;
+    .contact-info-box:not(:last-child) {
+        margin-bottom: 1.75vw;
+    }
+
+    .contact-info-heading {
+        margin-bottom: 1vw;
+    }
+
+    .contact-info-heading svg {
+        width: 6vw;
+        height: 6vw;
+        padding: 1vw;
+        margin-right: 1.875vw;
+    }
+
+    .contact-info-heading h2 {
+        font-size: 3vw;
+    }
+
+    .contact-info {
+        padding-left: 7.875vw;
+    }
+
+    .contact-info p {
+        font-size: 2vw;
+        max-width: calc(100% - 5vw);
+    }
+
+    .contact-info .btn {
+        height: 5vw;
+        width: 5vw;
+    }
+
+    #contact-left {
+        margin-bottom: 3vw;
+    }
+
+    #contact-right h2 {
+        font-size: 3vw;
+    }
+
+    #contact-form .input-box {
+        font-size: 2vw;
+        margin-bottom: 1.75vw;
+        padding: 1.25vw 2.5vw;
+    }
+
+    #contact-form #message {
+        height: 30vw !important;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 425px) {
+    .btn {
+        font-size: 5.5vw;
+        padding: 1.25vw 5vw;
+        border-radius: 10vw;
+        border: 0.5vw solid var(--color_accent);
+    }
+
+    .btn svg {
+        margin-left: 2.5vw;
+        font-size: 6vw;
+    }
+
+    .heading {
+        font-size: 7.5vw;
+        margin-bottom: 7.5vw;
+    }
+
+    .heading::after {
+        height: 0.1vw;
+    }
+
+    .sub-heading {
+        font-size: 6vw;
+    }
+
+    .sub-heading-container:not(:last-child) {
+        margin-bottom: 6vw;
+    }
+
+    .sub-heading-container {
+        padding: 5vw 1vw;
+    }
+
+    section {
+        padding: 3.5vw 2vw;
+    }
+
     header {
         width: 100%;
         left: -100%;
     }
 
-    section {
-        padding: 1rem;
+    header .user img {
+        height: 50vw;
+        width: 50vw;
     }
 
-    .sub-heading-container {
-        padding: 30px 5px;
+    header .user h1 {
+        font-size: 10vw;
+    }
+
+    header .user p {
+        font-size: 5vw;
+    }
+
+    #main-menu-bar {
+        right: 4vw;
+        top: 4vw;
+        border-radius: 1.5vw;
+    }
+
+    #main-menu-bar svg {
+        height: 7.5vw;
+        width: 7.5vw;
+    }
+
+    #main_menu {
+        font-size: 5vw;
+        line-height: 7.5vw;
+    }
+
+    #main_menu .main-menu-item {
+        width: 60vw;
+        margin: 1.5vw;
+        border-radius: 10vw;
+    }
+
+    #home .main-body h2 {
+        font-size: 10vw;
+        line-height: 12vw;
+        margin-bottom: 5vw;
+    }
+
+    #home .main-body h1 {
+        font-size: 25vw;
+        line-height: 22.5vw;
+    }
+
+    .key-points {
+        font-size: 4vw;
+        margin: 7.5vw 0;
+    }
+
+    .key-points li svg {
+        margin-right: 1.5vw;
+    }
+
+    .description {
+        font-size: 4vw;
+        margin-bottom: 5vw;
+    }
+
+    .my-info {
+        margin-bottom: 5vw;
+    }
+
+    .my-info li {
+        line-height: 7.5vw;
+    }
+
+    .description p {
+        line-height: 5vw;
+    }
+
+    .description p::first-letter {
+        font-size: 7.5vw;
+    }
+
+    .partition-left {
+        margin-bottom: 5vw;
+    }
+
+    .educations-container, .experience-container {
+        padding: 2vw;
+    }
+
+    .education-item:not(:last-child), .experience-item:not(:last-child) {
+        padding-bottom: 3vw;
+    }
+
+    .education-item::before, .experience-item::before {
+        left: 5vw;
+        width: 0.75vw;
+    }
+
+    .education-item-top, .experience-item-top {
+        margin-bottom: 1.5vw;
+    }
+
+    .education-item-top svg, .experience-item-top svg {
+        height: 10vw;
+        width: 10vw;
+        margin-right: 3.5vw;
+        padding: 1.5vw;
+    }
+
+    .education-item-details, .experience-item-details {
+        width: calc(100% - 13.5vw);
+    }
+
+    .education-title, .experience-title {
+        font-size: 4vw;
+        line-height: 5vw;
+    }
+
+    .education-date, .experience-date {
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+
+    .education-description, .experience-description {
+        margin-left: 13.5vw;
+        font-size: 3.25vw;
     }
 
     #project-filter-dropdown {
-        align-self: center;
-        margin: 0 0 1rem 0;
+        font-size: 5vw;
+        margin-bottom: 3vw;
+        width: 100%;
+    }
+
+    #project-filter-selected {
+        min-width: 60vw;
+        border-radius: 0.75vw;
+        outline: 0.5vw solid var(--color_accent);
+    }
+
+    #project-filter-selected svg {
+        height: 10vw;
+        width: 10vw;
+        border-radius: 0.75vw;
+        padding: 1.5vw;
+    }
+
+    #selected-filter {
+        line-height: 10vw;
+        padding: 0 3vw;
+    }
+
+    #project-filters {
+        border-radius: 0.75vw;
+        outline: 0.5vw solid var(--color_accent);
+    }
+
+    #project-filters li {
+        line-height: 10vw;
+        padding-left: 12.5vw;
+    }
+
+    .projects-container {
+        margin-bottom: 5vw;
+    }
+
+    .project-title, .certificate-title {
+        font-size: 4vw;
+        margin-bottom: 0.75vw;
+    }
+
+    .project-date, .certificate-date {
+        font-size: 3vw;
     }
 
     .project-item {
         width: 100%;
+    }
+
+    .project-item-card {
+        padding: 2.5vw;
+    }
+
+    .project-video-container .info-buttons::before {
+        top: 4vw;
+        left: 4vw;
+        border-left: 0.5vw solid var(--white);
+        border-top: 0.5vw solid var(--white);
+    }
+
+    .project-video-container .info-buttons::after {
+        bottom: 4vw;
+        right: 4vw;
+        border-right: 0.5vw solid var(--white);
+        border-bottom: 0.5vw solid var(--white);
+    }
+
+    .info-buttons .control-btn {
+        font-size: 10vw;
+    }
+
+    .controller {
+        padding: 3vw;
+    }
+
+    .main-buttons .control-btn {
+        font-size: 10.5vw;
+    }
+
+    .controller .buttons {
+        margin-bottom: 2.5vw;
+    }
+
+    .controller .buttons .timestamp {
+        font-size: 2.75vw;
+        font-weight: 300;
+    }
+
+    .controller .buttons .control-btn {
+        font-size: 4.5vw;
+    }
+
+    .controller .buttons .right-buttons > *:not(:first-child) {
+        margin-left: 3.5vw;
+    }
+
+    .controller .buttons .left-buttons > *:not(:last-child) {
+        margin-right: 3.5vw;
+    }
+
+    .controller .vdo-progress {
+        height: 0.85vw;
+        border-radius: 0.85vw;
+    }
+
+    .skill-item {
+        width: calc(100%/4);
+    }
+
+    .skill-item .skill-item-img-container {
+        padding: 2.5vw;
+    }
+
+    .skill-item .skill-title {
+        font-size: 3.5vw;
+    }
+
+    .certificate-container {
+        margin-bottom: 5vw;
+    }
+
+    .certificate-item {
+        padding: 1.5vw;
+        width: 50%;
+    }
+
+    .contact-info-box:not(:last-child) {
+        margin-bottom: 5vw;
+    }
+
+    .contact-info-heading {
+        margin-bottom: 1vw;
+    }
+
+    .contact-info-heading svg {
+        width: 10vw;
+        height: 10vw;
+        padding: 1.5vw;
+        margin-right: 3.5vw;
+    }
+
+    .contact-info-heading h2 {
+        font-size: 6vw;
+    }
+
+    .contact-info {
+        padding-left: 13.5vw;
+    }
+
+    .contact-info p {
+        font-size: 4vw;
+        max-width: calc(100% - 10vw);
+    }
+
+    .contact-info .btn {
+        height: 9vw;
+        width: 9vw;
+    }
+
+    #contact-left {
+        margin-bottom: 5vw;
+    }
+
+    #contact-right h2 {
+        font-size: 6vw;
+        margin-bottom: 3vw;
+    }
+
+    #contact-form .input-box {
+        font-size: 4vw;
+        margin-bottom: 3vw;
+        padding: 1.5vw 3vw;
+    }
+
+    #contact-form #message {
+        height: 40vw !important;
     }
 }
