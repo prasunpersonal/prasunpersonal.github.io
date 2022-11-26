@@ -1,49 +1,34 @@
 import React from 'react';
-import { MdForward10, MdReplay10, MdPlayArrow, MdPause, MdVolumeUp, MdVolumeOff, MdFullscreen, MdFullscreenExit, MdSpeed } from 'react-icons/md';
-import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { FaCalendarCheck } from 'react-icons/fa';
+import { VideoPlayer } from './VideoPlayer';
 
 export const ProjectItem = (props) => {
-    const vdoRef = React.useRef(null);
-    const [isPlaying, setPlaying] = React.useState(false);
-    const [isMuted, setMuted] = React.useState(true);
-    const [progress, setProgress] = React.useState(0);
-    const [speed, setSpeed] = React.useState(1);
-
     React.useEffect(() => {
-        setMuted(!props.active);
-        setProgress(0);
-        setPlaying(props.active);
-        setSpeed(1);
-    }, [props.active]);
-
-    React.useEffect(() => {
-        if (isPlaying) vdoRef.current.play();
-        else vdoRef.current.pause();
-    }, [isPlaying]);
-
-    React.useEffect(() => {
-        vdoRef.current.playbackRate = speed;
-    }, [speed]);
-
-    const secondsToTime = (secs) => {
-        var hours = Math.floor(secs / 3600);
-        var divisor_for_minutes = secs % 3600;
-        var minutes = Math.floor(divisor_for_minutes / 60);
-        var divisor_for_seconds = divisor_for_minutes % 60;
-        var seconds = Math.ceil(divisor_for_seconds);
-        return (hours > 0) ? hours + ":" + ("0"+minutes).slice(-2) + ":" + ("0"+seconds).slice(-2)
-            : ("0"+minutes).slice(-2) + ":" + ("0"+seconds).slice(-2);
-    }
+        if(props.active && props.hidden) props.setActiveProjectId("");
+    }, [props, props.active, props.hidden]);
 
     return (
         <div className={"project-item " + (props.active ? "active " : "") + (props.hidden ? "hidden " : "")}>
             <div className="project-item-card">
                 <div className="project-video-container">
-                    <video className="project-vdo" loop muted={isMuted} controls={false} ref={vdoRef} onTimeUpdate={() => setProgress(parseInt(vdoRef.current.currentTime))}>
+                    <VideoPlayer src={props.project.projectVideoUrl} project={props.project} active={props.active} setActiveProjectId={props.setActiveProjectId} />
+                </div>
+                <div className="project-details">
+                    <p className="project-title single-line-text">{props.project.projectTitle}</p>
+                    <p className="project-date single-line-text"><FaCalendarCheck />{props.project.projectDate}</p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+/* 
+
+<video className="project-vdo" preload="auto" loop muted={isMuted} controls={false} ref={vdoRef} onTimeUpdate={() => vdoRef.current.currentTime = parseInt(vdoRef.current.currentTime)} >
                         <source src={props.project.projectVideoUrl}></source>
                     </video>
-                    <div className="project-info">
+                    <div className="project-vdo-overlay">
                         {props.active ?
                             <div className="controller">
                                 <div className="main-buttons">
@@ -65,7 +50,7 @@ export const ProjectItem = (props) => {
                                         <MdFullscreenExit className="control-btn" onClick={() => props.setActiveProjectId("")} />
                                     </div>
                                 </div>
-                                <input type="range" className="vdo-progress" min="0" max={parseInt(vdoRef.current.duration)} value={progress} onChange={(e) => vdoRef.current.currentTime = e.target.value} />
+                                <input type="range" className="vdo-progress" min="0" max={parseInt(vdoRef.current.duration)} value={parseInt(vdoRef.current.currentTime)} onChange={(e) => vdoRef.current.currentTime = e.target.value} />
                             </div>
                             :
                             <div className="info-buttons">
@@ -75,12 +60,5 @@ export const ProjectItem = (props) => {
                             </div>
                         }
                     </div>
-                </div>
-                <div className="project-details">
-                    <p className="project-title single-line-text">{props.project.projectTitle}</p>
-                    <p className="project-date single-line-text"><FaCalendarCheck />{props.project.projectDate}</p>
-                </div>
-            </div>
-        </div>
-    )
-}
+
+*/
