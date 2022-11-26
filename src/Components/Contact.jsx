@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Apis from '../Apis';
 import { MdLocationOn, MdOutlineAlternateEmail, MdEmail, MdPhone } from 'react-icons/md';
-import { FaMapMarkedAlt, FaWhatsapp, FaHashtag, FaLinkedinIn, FaFacebookF, FaTwitter, FaInstagram, FaPaperPlane } from 'react-icons/fa';
+import { FaMapMarkedAlt, FaWhatsapp, FaHashtag, FaLinkedinIn, FaFacebookF, FaYoutube, FaInstagram, FaPaperPlane } from 'react-icons/fa';
 
 export const Contact = (props) => {
     const initState = {
@@ -79,8 +79,8 @@ export const Contact = (props) => {
                         </div>
                         <div className="contact-info">
                             <a className="btn" href="https://www.linkedin.com/in/prasunpersonal/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-                            <a className="btn" href="https://www.facebook.com/prasunsarkar.personal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-                            <a className="btn" href="https://twitter.com/prasunpersonal/" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+                            <a className="btn" href="https://www.youtube.com/@prasunpersonal" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+                            <a className="btn" href="https://www.facebook.com/prasunpersonal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
                             <a className="btn" href="https://www.instagram.com/prasun_personal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                         </div>
                     </div>
