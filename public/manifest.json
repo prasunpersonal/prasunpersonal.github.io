@@ -17,7 +17,7 @@
         {
             "src": "profile_pic.jpg",
             "type": "image/jpg",
-            "sizes": "180x180"
+            "sizes": "2170x2170"
         }
     ],
     "start_url": ".",
