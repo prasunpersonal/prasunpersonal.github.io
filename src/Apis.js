@@ -1,4 +1,5 @@
-const BASE_URL = "https://prasun-portfolio-server.herokuapp.com/";
+const BASE_URL = "http://localhost:8000/";
+// const BASE_URL = "https://prasunpersonal-portfolio.cyclic.app/";
 
 const Apis = {
     GET_ALL_EDUCATIONS: BASE_URL.concat('educations/', 'all/'),
@@ -9,7 +10,7 @@ const Apis = {
     GET_ALL_LANGUAGES: BASE_URL.concat('skills/', 'languages-and-frameworks/'),
     GET_ALL_DATABASES: BASE_URL.concat('skills/', 'databases/'),
     GET_ALL_PROFILES: BASE_URL.concat('skills/', 'profiles/'),
-    EMAIL_SENDING_URL: "https://prasun-portfolio-server.herokuapp.com/services/sendemail"
+    EMAIL_SENDING_URL: BASE_URL.concat('services/', 'sendemail/')
 }
 
 export default Apis;

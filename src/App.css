@@ -800,6 +800,8 @@ svg.active.control-btn {
 .skill-item .skill-item-img-container img {
     height: 100%;
     width: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
 .skill-item .skill-title-link {

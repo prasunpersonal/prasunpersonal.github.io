@@ -11,7 +11,7 @@ export const ProjectItem = (props) => {
         <div className={"project-item " + (props.active ? "active " : "") + (props.hidden ? "hidden " : "")}>
             <div className="project-item-card">
                 <div className="project-video-container">
-                    <VideoPlayer src={props.project.projectVideoUrl} project={props.project} active={props.active} setActiveProjectId={props.setActiveProjectId} />
+                    <VideoPlayer src={props.project.projectVideo} project={props.project} active={props.active} setActiveProjectId={props.setActiveProjectId} />
                 </div>
                 <div className="project-details">
                     <p className="project-title single-line-text">{props.project.projectTitle}</p>
