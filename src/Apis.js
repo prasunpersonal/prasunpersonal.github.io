@@ -1,5 +1,4 @@
-const BASE_URL = "http://localhost:8000/";
-// const BASE_URL = "https://prasunpersonal-portfolio.cyclic.app/";
+const BASE_URL = "https://prasunpersonal-portfolio.cyclic.app/";
 
 const Apis = {
     GET_ALL_EDUCATIONS: BASE_URL.concat('educations/', 'all/'),

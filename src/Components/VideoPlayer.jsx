@@ -1,15 +1,14 @@
 import React from 'react';
-import { VideoController } from './VideoController';
 
-export const VideoPlayer = ({src, project, active, setActiveProjectId}) => {
+export const VideoPlayer = ({ src }) => {
     const vdoRef = React.useRef(null);
+    React.useEffect(()=> {
+        vdoRef.current.load();
+    }, [src])
 
     return (
-        <>
-            <video loop className="project-vdo" preload="auto" muted={vdoRef.muted} controls={false} ref={vdoRef} >
-                <source src={src}></source>
-            </video>
-            <VideoController vdoRef={vdoRef} active={active} project={project} setActiveProjectId={setActiveProjectId} />
-        </>
+        <video className="fullscreen-vdo" preload="auto" controls autoPlay controlsList="nofullscreen nodownload" ref={vdoRef} >
+            <source src={src}></source>
+        </video>
     )
 }

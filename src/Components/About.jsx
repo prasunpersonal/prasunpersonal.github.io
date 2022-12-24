@@ -2,7 +2,8 @@ import React from 'react';
 import { EducationItem } from './EducationItem';
 import { ExperienceItem } from './ExperienceItem';
 
-export const About = (props) => {
+export const About = ({educations, experiences}) => {
+
 	return (
 		<section id="about">
 			<h1 className="heading ">About Me</h1>
@@ -23,13 +24,13 @@ export const About = (props) => {
 					<div className="partition-left">
 						<h2 className="sub-heading">Education</h2>
 						<div className="educations-container">
-							{props.educations.map((education) => (<EducationItem key={education._id} education={education} />))}
+							{educations.map((education) => (<EducationItem key={education._id} education={education} />))}
 						</div>
 					</div>
 					<div className="partition-right">
 						<h2 className="sub-heading">Experience</h2>
 						<div className="experience-container">
-							{props.experiences.length === 0 ? <p>I'm still a fresher.</p> :  props.experiences.map((experience) => (<ExperienceItem key={experience._id} experience={experience} />))}
+							{experiences.length === 0 ? <p>I'm still a fresher.</p> :  experiences.map((experience) => (<ExperienceItem key={experience._id} experience={experience} />))}
 						</div>
 					</div>
 				</div>

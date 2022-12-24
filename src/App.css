@@ -40,7 +40,7 @@ section {
     padding: 1.5vw 3vw;
 }
 
-section:nth-child(even) {
+section:nth-child(even), #fullScreenCertificate {
     --color_background: #FFF;
     --color_on_background: #eeeff7;
     --color_on_background_variant: #DDD;
@@ -50,7 +50,7 @@ section:nth-child(even) {
     background-color: var(--color_background);
 }
 
-section:nth-child(odd) {
+section:nth-child(odd), #fullScreenProjects {
     --color_background: #111;
     --color_on_background: #222;
     --color_on_background_variant: #333;
@@ -161,7 +161,7 @@ textarea:focus {
     color: var(--color_accent);
     border: 0.2vw solid var(--color_accent);
     border-radius: 3vw;
-    padding: 0.5vw 2vw;
+    padding: 0.25vw 2vw;
     cursor: pointer;
     transition: all ease-in-out 0.3s;
 }
@@ -830,6 +830,7 @@ svg.active.control-btn {
 
 .certificate-img {
     aspect-ratio: 4/3;
+    cursor: pointer;
 }
 
 #certificate-expand-btn {
@@ -944,6 +945,128 @@ svg.active.control-btn {
     margin: 1vw;
 }
 
+#fullScreenProjects, #fullScreenCertificates {
+    position: relative;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    background-color: var(--color_on_background);
+    padding: 0.5vw 2vw;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 0.5vw 0 black;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.topbar .back-btn,
+.topbar .menu-btn {
+    height: 2.5vw;
+    width: 2.5vw;
+    padding: 0.5vw;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--color_primary_text);
+    transition: all ease-in-out 0.3s;
+}
+
+.topbar .back-btn:hover {
+    background-color: var(--color_on_background_variant);
+}
+
+.topbar .menu-btn {
+    margin: 0 0.5vw;
+    background-color: var(--color_on_background_variant);
+}
+
+.topbarHeadingSection {
+    flex: 1 1 auto;
+    padding: 0 2vw;
+}
+
+.topbarHeading {
+    font-weight: 500;
+    font-size: 1.125vw;
+    color: var(--color_primary_text);
+}
+
+.topbarSubHeading {
+    font-weight: 300;
+    font-size: 0.85vw;
+    display: flex;
+    align-items: center;
+    color: var(--color_secondary_text);
+}
+
+.topbarSubHeading svg {
+    margin-right: 0.4vw;
+    color: var(--color_accent);
+}
+
+.topbarOptions {
+    display: flex;
+    align-items: center;
+}
+
+.topbarOptions a {
+    display: contents;
+}
+
+.fullscreenArea {
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+
+.fullscreen-vdo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    box-shadow: 0 0 0.5vw 0 var(--black);
+    outline: none;
+    border: none;
+}
+
+.fullscreenCertificate {
+    box-shadow: 0 0 0.5vw 0 var(--black);
+    outline: none;
+    border: none;
+}
+
+.controlButtons {
+    background-color: var(--color_on_background);
+    padding: 0.5vw 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 0.5vw 0 black;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.btn.disabled {
+    pointer-events: none;
+    color: gray;
+    border-color: gray;
+}
+
+
 /* Media Queries */
 @media screen and (max-width: 1024px) {
     body {
@@ -957,7 +1080,7 @@ svg.active.control-btn {
     .btn {
         font-size: 3vw;
         border: 0.3vw solid var(--color_accent);
-        padding: 0.75vw 3vw;
+        padding: 0.5vw 3vw;
         border-radius: 5vw;
     }
 
@@ -1317,7 +1440,7 @@ svg.active.control-btn {
 @media screen and (max-width: 425px) {
     .btn {
         font-size: 5.5vw;
-        padding: 1.25vw 5vw;
+        padding: 1vw 5vw;
         border-radius: 10vw;
         border: 0.5vw solid var(--color_accent);
     }

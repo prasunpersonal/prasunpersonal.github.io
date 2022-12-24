@@ -3,16 +3,13 @@ import { ProjectItem } from './ProjectItem';
 import { MdFilterAlt } from 'react-icons/md';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
-
-export const Projects = (props) => {
+export const Projects = ({categories, allProjects}) => {
     const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
-    const [categories, setCategories] = React.useState([]);
-    const [colapse, setColapse] = React.useState(true)
+    const [colapse, setColapse] = React.useState(true);
     const [projects, setProjects] = React.useState([]);
     const [projectFilter, setProjectFilter] = React.useState("All Projects");
     const [showAll, setShowAll] = React.useState(false);
     const [maxProjectLimit, setMaxProjectLimit] = React.useState(0);
-    const [activeProjectId, setActiveProjectId] = React.useState("");
 
     React.useEffect(() => {
         window.onresize = () => {
@@ -25,19 +22,15 @@ export const Projects = (props) => {
     }, [windowWidth]);
 
     React.useEffect(() => {
-        setCategories(props.categories);
-    }, [props.categories]);
-
-    React.useEffect(() => {
         if (projectFilter === "All Projects") {
-            setProjects(props.projects);
+            setProjects(allProjects);
         } else {
-            setProjects(props.projects.filter((p) => {
+            setProjects(allProjects.filter((p) => {
                 return p.projectCategory.toLowerCase() === projectFilter.toLowerCase();
             }));
         }
         setShowAll(false);
-    }, [props.projects, projectFilter]);
+    }, [allProjects, projectFilter]);
 
     return (
         <section id="projects">
@@ -58,7 +51,7 @@ export const Projects = (props) => {
                     : ""
                 }
                 <div className="projects-container">
-                    {projects.length > 0 ? projects.map((project, i) => (<ProjectItem key={project._id} project={project} hidden={i >= maxProjectLimit && !showAll} active={project._id === activeProjectId} setActiveProjectId={setActiveProjectId} />)) : <p className="loading-message" >Please wait while the projects are loading...</p>}
+                    {projects.length > 0 ? projects.map((project, i) => (<ProjectItem key={project._id} project={project} hidden={i >= maxProjectLimit && !showAll} index={i} />)) : <p className="loading-message" >Please wait while the projects are loading...</p>}
                 </div>
                 {projects.length > maxProjectLimit ?
                     <button id="project-expand-btn" className="btn" onClick={() => setShowAll(!showAll)}>{showAll ? "Show Less" : "Show More"}{showAll ? <FaAngleUp /> : <FaAngleDown />}</button>
