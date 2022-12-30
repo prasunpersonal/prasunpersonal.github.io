@@ -1078,9 +1078,9 @@ video::-webkit-media-controls-fullscreen-button {
     }
 
     .btn {
-        font-size: 3vw;
+        font-size: 2.5vw;
         border: 0.3vw solid var(--color_accent);
-        padding: 0.5vw 3vw;
+        padding: 0.25vw 3vw;
         border-radius: 5vw;
     }
 
@@ -1293,11 +1293,11 @@ video::-webkit-media-controls-fullscreen-button {
         width: calc(100%/2);
     }
 
-    .project-title, .certificate-title {
+    .project-title, .certificate-title, .topbarHeading {
         font-size: 2.25vw;
     }
 
-    .project-date, .certificate-date {
+    .project-date, .certificate-date, .topbarSubHeading {
         font-size: 1.5vw;
     }
 
@@ -1375,6 +1375,12 @@ video::-webkit-media-controls-fullscreen-button {
         width: calc(100%/3);
     }
 
+    .topbar .back-btn, .topbar .menu-btn {
+        height: 5vw;
+        width: 5vw;
+        padding: 1vw;
+    }
+
     #contacts .main-body {
         flex-direction: column;
         justify-content: space-between;
@@ -1439,8 +1445,8 @@ video::-webkit-media-controls-fullscreen-button {
 
 @media screen and (max-width: 425px) {
     .btn {
-        font-size: 5.5vw;
-        padding: 1vw 5vw;
+        font-size: 4.5vw;
+        padding: 0.7vw 5vw;
         border-radius: 10vw;
         border: 0.5vw solid var(--color_accent);
     }
@@ -1646,7 +1652,11 @@ video::-webkit-media-controls-fullscreen-button {
         margin-bottom: 0.75vw;
     }
 
-    .project-date, .certificate-date {
+    .topbarHeading {
+        font-size: 4vw;
+    }
+
+    .project-date, .certificate-date, .topbarSubHeading {
         font-size: 3vw;
     }
 
@@ -1762,6 +1772,12 @@ video::-webkit-media-controls-fullscreen-button {
     .contact-info .btn {
         height: 9vw;
         width: 9vw;
+    }
+
+    .topbar .back-btn, .topbar .menu-btn {
+        height: 7.5vw;
+        width: 7.5vw;
+        padding: 1.25vw;
     }
 
     #contact-left {
