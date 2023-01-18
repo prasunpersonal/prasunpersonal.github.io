@@ -9,8 +9,8 @@
 }
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
@@ -1041,6 +1041,7 @@ video::-webkit-media-controls-fullscreen-button {
 }
 
 .fullscreenCertificate {
+    width: 100%;
     box-shadow: 0 0 0.5vw 0 var(--black);
     outline: none;
     border: none;

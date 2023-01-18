@@ -4,13 +4,12 @@ import { Sections } from './Components/Sections';
 import { Main } from './Components/Main';
 import { FullscreenProject } from './Components/FullscreenProject';
 import { FullscreenCertificate } from './Components/FullscreenCertificate';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Apis from './Apis';
+import {Routes, Route, Navigate, HashRouter} from "react-router-dom";
 
 function App() {
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<Main />} >
                     <Route path="/" element={<Sections  />} />
@@ -20,7 +19,7 @@ function App() {
                 </Route>
             </Routes>
 
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
