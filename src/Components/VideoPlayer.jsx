@@ -7,7 +7,7 @@ export const VideoPlayer = ({ src }) => {
     }, [src])
 
     return (
-        <video className="fullscreen-vdo" preload="auto" controls autoPlay controlsList="nofullscreen nodownload" ref={vdoRef} >
+        <video autoFocus={true} className="fullscreen-vdo" preload="auto" controls autoPlay controlsList="nofullscreen nodownload" ref={vdoRef} >
             <source src={src}></source>
         </video>
     )

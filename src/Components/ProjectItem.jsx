@@ -18,7 +18,7 @@ export const ProjectItem = (props) => {
                     <div className="project-vdo-overlay">
                         <div className="info-buttons">
                             <a target="_blank" rel="noopener noreferrer" href={props.project.linkedinLink}><AiFillLinkedin className="control-btn" /></a>
-                            <MdFullscreen className="control-btn" onClick={() => navigate({pathname: '/projects', search:('?index=' + props.index)})} />
+                            <MdFullscreen className="control-btn" onClick={() => navigate(`/projects/${props.project._id}`)} />
                             <a target="_blank" rel="noopener noreferrer" href={props.project.githubLink}><AiFillGithub className="control-btn" /></a>
                         </div>
                     </div>

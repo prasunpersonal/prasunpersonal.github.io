@@ -1,5 +1,4 @@
 {
-  "homepage": "https://prasunpersonal.github.io/",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +6,6 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
@@ -16,12 +14,9 @@
     "react-scroll": "^1.8.7",
     "react-toastify": "^9.0.6",
     "typed.js": "^2.0.12",
-    "usehooks-ts": "^2.9.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
