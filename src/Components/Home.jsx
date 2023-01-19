@@ -2,7 +2,7 @@ import React from 'react';
 import { FaAngleDoubleRight } from 'react-icons/fa'
 import { AiFillFilePdf } from 'react-icons/ai'
 
-export const Home = (props) => {
+export const Home = () => {
     return (
         <section id="home">
             <div className="main-body">
@@ -16,7 +16,7 @@ export const Home = (props) => {
                     <li><FaAngleDoubleRight />I like to keep a positive attitude.</li>
                     <li><FaAngleDoubleRight />I like working systematically.</li>
                 </ul>
-                <a href="/prasun_sarkar_resume.pdf" id="resume-download-btn" className="btn" download>Download Resume <AiFillFilePdf /></a>
+                <a href="/PRASUN_SARKAR_Resume.pdf" id="resume-download-btn" className="btn" download>Download Resume <AiFillFilePdf /></a>
             </div>
         </section>
     )
