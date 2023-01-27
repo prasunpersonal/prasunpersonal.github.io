@@ -28,6 +28,7 @@ const Apis = {
 
     GET_ALL_LANGUAGES: BASE_URL.concat('skills/', 'languages-and-frameworks/'),
     GET_ALL_DATABASES: BASE_URL.concat('skills/', 'databases/'),
+    GET_ALL_PROFILES: BASE_URL.concat('skills/', 'profiles/'),
     GET_ALL_SKILLS: BASE_URL.concat('skills/', 'all/'),
     UPDATE_SKILL: BASE_URL.concat('skills/', 'update/'),
     DELETE_SKILL: BASE_URL.concat('skills/', 'delete/'),
