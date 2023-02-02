@@ -30,7 +30,6 @@
 
 body {
     position: relative;
-    padding-left: 27.5vw;
     min-width: 320px;
     transition: all ease-in-out 0.3s;
 }
@@ -38,6 +37,7 @@ body {
 section {
     min-height: 100vh;
     padding: 1.5vw 3vw;
+    margin-left: 27.5vw;
 }
 
 section:nth-child(even), #fullScreenCertificate {
@@ -1067,15 +1067,11 @@ video::-webkit-media-controls-fullscreen-button {
     border-color: gray;
 }
 
-
 /* Media Queries */
 @media screen and (max-width: 1024px) {
-    body {
-        padding-left: 0;
-    }
-
     section {
         padding: 2vw;
+        margin-left: 0;
     }
 
     .btn {

@@ -12,11 +12,12 @@ function App() {
         <HashRouter>
             <Routes>
                 <Route path="/" element={<Main />} >
-                    <Route path="/" element={<Sections  />} />
                     <Route path="/projects/:id" element={<FullscreenProject />} />
                     <Route path="/certificates/:id" element={<FullscreenCertificate />} />
+                    <Route path="/" element={<Sections  />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Route>
+
             </Routes>
 
         </HashRouter>
