@@ -17,9 +17,7 @@ function App() {
                     <Route path="/" element={<Sections  />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Route>
-
             </Routes>
-
         </HashRouter>
     );
 }
