@@ -1,4 +1,5 @@
-const BASE_URL = "https://prasunpersonal-portfolio.cyclic.app/";
+const BASE_URL = "https://prasunpersonal-server.onrender.com/";
+// const BASE_URL = "http://localhost:8000";
 
 const Apis = {
     GET_EDUCATION: BASE_URL.concat('educations/'),
